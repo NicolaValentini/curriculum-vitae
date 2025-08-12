@@ -1,0 +1,32 @@
+{
+  "nameSurname": "Nicola Valentini",
+  "downloadResume": "Download Resume",
+  "titles": {
+    "aboutMe": "About Me",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "job": "Web Developer",
+    "slogan": "Transform ideas into modern solutions."
+  },
+  "coverLetter": {
+    "1": "I’m Nicola Valentini, Web Developer with 5 years of React experience.",
+    "2": "I build modern interfaces by turning ideas and designs into responsive and high-performing solutions.",
+    "3": "I’m currently looking for opportunities in startups where innovation and product quality are a top priority.",
+    "4": "Let’s connect and see how I can bring value to your team..."
+  },
+  "contacts": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "linkedin": "LinkedIn",
+    "address": "Address"
+  },
+  "links": {
+    "email": "nicolavalentini7@gmail.com",
+    "phone": "+39 346 248 7850",
+    "linkedin": "linkedin.com/in/nicola-valentini",
+    "gitHub": "github.com/NicolaValentini",
+    "address": "Borgoricco - Padua - Italy"
+  }
+}

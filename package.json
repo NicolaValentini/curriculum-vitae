@@ -13,7 +13,10 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.6.1",
+    "lodash": "^4.17.21",
     "motion": "^12.19.1",
+    "negotiator": "^1.0.0",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -22,6 +25,8 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.10",
+    "@types/lodash": "^4.17.20",
+    "@types/negotiator": "^0.6.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
