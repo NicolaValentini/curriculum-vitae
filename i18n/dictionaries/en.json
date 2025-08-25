@@ -2,6 +2,7 @@
   "nameSurname": "Nicola Valentini",
   "downloadResume": "Download Resume",
   "titles": {
+    "home": "Home",
     "aboutMe": "About Me",
     "contacts": "Contacts"
   },

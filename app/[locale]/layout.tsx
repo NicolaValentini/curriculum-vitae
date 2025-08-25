@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 
 import { i18n, Locale } from '../../i18n-config';
 import { getDictionary } from '@/i18n/get-dictionary';
-import { Providers } from '@/components';
+import { Header, Providers } from '@/components';
 
 import './globals.css';
 
@@ -42,6 +42,8 @@ export default async function RootLayout(props: Props) {
     <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Providers locale={locale} dictionary={dictionary}>
+          <Header />
+
           {children}
         </Providers>
       </body>
