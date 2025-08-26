@@ -2,8 +2,9 @@ import { ReactNode } from 'react';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import { i18n, Locale } from '../../i18n-config';
+
 import { getDictionary } from '@/i18n/get-dictionary';
-import { Header, Providers } from '@/components';
+import { Footer, Header, Providers } from '@/components';
 
 import './globals.css';
 
@@ -45,6 +46,8 @@ export default async function RootLayout(props: Props) {
           <Header />
 
           {children}
+
+          <Footer />
         </Providers>
       </body>
     </html>

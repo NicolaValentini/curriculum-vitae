@@ -30,7 +30,7 @@ export const NavLinks: FC<Props> = ({ onClickAction }) => {
   const {
     ref: elementRef,
     rect: elementRect,
-    update: updateElementRect,
+    updateRect: updateElementRect,
   } = useElementRect<HTMLLIElement>();
 
   const realPath = path.slice(3)?.length > 0 ? path.slice(3) : '/';

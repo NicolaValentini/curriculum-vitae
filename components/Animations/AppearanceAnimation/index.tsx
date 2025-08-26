@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentType, FC, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 
 const initial = {
@@ -15,6 +15,7 @@ const initial = {
 export type AppearanceAnimationProps = {
   as?: 'div' | undefined;
   show?: boolean | undefined;
+  delay?: number | undefined;
   display?: string | undefined;
   className?: string | undefined;
   children?: ReactNode;
@@ -22,6 +23,7 @@ export type AppearanceAnimationProps = {
 
 export const AppearanceAnimation: FC<AppearanceAnimationProps> = ({
   as = 'div',
+  delay = 0,
   className,
   show = false,
   display = 'block',
@@ -39,8 +41,8 @@ export const AppearanceAnimation: FC<AppearanceAnimationProps> = ({
             opacity: 1,
             display,
             transition: {
-              opacity: { duration: 0.3, delay: 0.1 },
-              display: { duration: 0, delay: 0 },
+              opacity: { duration: 0.3, delay: delay + 0.1 },
+              display: { duration: 0, delay },
             },
           }}
           exit={initial}
@@ -51,35 +53,3 @@ export const AppearanceAnimation: FC<AppearanceAnimationProps> = ({
     </AnimatePresence>
   );
 };
-
-type WithAppearanceAnimationProps<P> = P &
-  Partial<Omit<AppearanceAnimationProps, 'className' | 'children'>> & {
-    wrapperClassName?: string;
-  };
-
-export function withAppearanceAnimation<P extends object>(
-  Component: ComponentType<P>,
-) {
-  const ComponentWithAppearanceAnimation = ({
-    wrapperClassName,
-    as,
-    show,
-    display,
-    ...rest
-  }: WithAppearanceAnimationProps<P>) => (
-    <AppearanceAnimation
-      as={as}
-      show={show}
-      display={display}
-      className={wrapperClassName}
-    >
-      <Component {...(rest as P)} />
-    </AppearanceAnimation>
-  );
-
-  ComponentWithAppearanceAnimation.displayName = `WithAppearanceAnimation(${
-    Component.displayName || Component.name || 'Component'
-  })`;
-
-  return ComponentWithAppearanceAnimation;
-}

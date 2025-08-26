@@ -3,18 +3,23 @@ import { useCallback, useEffect, useState } from 'react';
 export function useElementRect<T extends HTMLElement>() {
   const [rect, setRect] = useState<DOMRect | null>(null);
   const [node, setNode] = useState<T | null>(null);
+  const [key, setKey] = useState<string | null>(null);
 
-  const ref = useCallback((el: T | null) => {
+  const ref = useCallback((el: T | null, _key?: string) => {
     setNode(el);
+    setKey(_key?.trim()?.length ? _key : null);
   }, []);
 
-  const update = useCallback(
+  const updateRect = useCallback(
     () => setRect(node?.getBoundingClientRect() ?? null),
     [node],
   );
 
   useEffect(() => {
-    if (!node) return;
+    if (!node) {
+      setRect(null);
+      return;
+    }
 
     const updateRect = () => setRect(node.getBoundingClientRect());
 
@@ -32,5 +37,5 @@ export function useElementRect<T extends HTMLElement>() {
     };
   }, [node]);
 
-  return { ref, rect, update };
+  return { ref, rect, updateRect, key };
 }
