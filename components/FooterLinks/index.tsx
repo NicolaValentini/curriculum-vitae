@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ReactNode } from 'react';
+import { FC, MouseEvent, ReactNode } from 'react';
 import {
   FaEnvelope,
   FaGithub,
@@ -44,6 +44,8 @@ const links: Link[] = [
   },
 ];
 
+let timeout: NodeJS.Timeout | null = null;
+
 export const FooterLinks: FC = () => {
   const { ref: containerRef, rect: containerRect } =
     useElementRect<HTMLDivElement>();
@@ -53,18 +55,32 @@ export const FooterLinks: FC = () => {
     rect: elementRect,
   } = useElementRect<HTMLParagraphElement>();
 
+  const handleClick = (
+    e: MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>,
+    key: string,
+  ) => {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    elementRef(e.currentTarget, key);
+
+    timeout = setTimeout(() => elementRef(null), 5000);
+  };
+
   return (
-    <div className='flex flex-col md:flex-row items-center justify-center gap-4'>
+    <div className='flex flex-col md:flex-row items-center justify-center'>
       Keep discovering me on
       <div
         ref={containerRef}
-        className='relative flex items-center justify-center gap-4'
-        onMouseLeave={() => elementRef(null)}
+        className='relative flex items-center justify-center mt-4 md:mt-0 md:ml-4'
+        onMouseLeave={() => !timeout && elementRef(null)}
       >
-        {links.map(({ key, icon, href }) => (
+        {links.map(({ key, icon, href }, index) => (
           <p
             key={key}
-            onClick={e => elementRef(e.currentTarget, key)}
+            className={index ? 'ml-4' : ''}
+            onClick={e => handleClick(e, key)}
             onMouseEnter={e => elementRef(e.currentTarget, key)}
           >
             {href ? (
@@ -77,7 +93,7 @@ export const FooterLinks: FC = () => {
           </p>
         ))}
 
-        <AppearanceAnimation show={!!elementRect && !!path} delay={0.1}>
+        <AppearanceAnimation show={!!path} delay={0.1}>
           <MovingElement
             elementRect={elementRect}
             containerRect={containerRect}

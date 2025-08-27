@@ -6,6 +6,8 @@ import { FaFileArrowDown } from 'react-icons/fa6';
 
 import { I18nContext } from '@/context';
 
+import { withEntryAnimation } from '../Animations';
+
 type Props = {
   type?: 'text' | 'icon';
 };
@@ -42,3 +44,6 @@ export const DownloadResume: FC<Props> = ({ type = 'text' }) => {
     </a>
   );
 };
+
+export const DownloadResumeWithEntryAnimation =
+  withEntryAnimation<Props>(DownloadResume);

@@ -47,7 +47,9 @@ export default async function RootLayout(props: Props) {
 
           {children}
 
-          <Footer />
+          <div className='pt-[16vh]'>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

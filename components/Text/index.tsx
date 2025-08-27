@@ -5,6 +5,8 @@ import { get } from 'lodash';
 
 import { I18nContext } from '@/context';
 
+import { withEntryAnimation } from '../Animations';
+
 type Props = {
   path: string;
   bold?: boolean;
@@ -36,3 +38,5 @@ export const Text: FC<Props> = ({
 
   return <p className={className}>{get(dictionary, path, '')}</p>;
 };
+
+export const TextWithEntryAnimation = withEntryAnimation<Props>(Text);
