@@ -4,17 +4,32 @@
   "titles": {
     "home": "Home",
     "aboutMe": "About Me",
-    "contacts": "Contacts"
+    "resume": "Resume",
+    "contacts": "Contacts",
+    "whoIAm": "Who I Am",
+    "myHistory": "My history"
   },
   "hero": {
     "job": "Web Developer",
     "slogan": "Transform ideas into modern solutions."
   },
-  "coverLetter": {
+  "aboutMe": {
     "1": "I’m Nicola Valentini, a Web Developer specializing in React, with experience dating back to 2020.",
     "2": "I build modern interfaces by turning ideas into responsive and high-performing solutions.",
     "3": "I’m currently looking for opportunities in startups where innovation and product quality are a top priority.",
     "4": "Let’s connect and see how I can bring value to your team..."
+  },
+  "whoIAm": {
+    "1": "I’m a Web Developer with a passion for technology and innovation, always looking for new challenges.",
+    "2": "I design and build modern, fast, user-friendly interfaces — from mockups or even just ideas — that put user experience first.",
+    "3": "I’ve worked on complex UI projects, including in the banking sector, that required not just clean code, but also attention to UX, scalability, and optimization.",
+    "4": "My workflow is structured and effective: Analyze – Design – Develop – Optimize. My focus? Functional, responsive, high-performing solutions."
+  },
+  "myHistory": {
+    "1": "I’m a Web Developer with a passion for technology and innovation, always looking for new challenges.",
+    "2": "I design and build modern, fast, user-friendly interfaces — from mockups or even just ideas — that put user experience first.",
+    "3": "I’ve worked on complex UI projects, including in the banking sector, that required not just clean code, but also attention to UX, scalability, and optimization.",
+    "4": "My workflow is structured and effective: Analyze – Design – Develop – Optimize. My focus? Functional, responsive, high-performing solutions."
   },
   "contacts": {
     "name": "Name",

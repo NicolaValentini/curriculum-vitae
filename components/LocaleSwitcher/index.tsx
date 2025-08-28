@@ -12,7 +12,10 @@ type Props = {
   onClickAction?: () => void;
 };
 
-export const LocaleSwitcher: FC<Props> = ({ className, onClickAction }) => {
+export const LocaleSwitcher: FC<Props> = ({
+  className = '',
+  onClickAction,
+}) => {
   const path = usePathname();
   const { locale, setI18n } = use(I18nContext);
 

@@ -4,17 +4,32 @@
   "titles": {
     "home": "Home",
     "aboutMe": "Su di me",
-    "contacts": "Contatti"
+    "resume": "Curriculum",
+    "contacts": "Contatti",
+    "whoIAm": "Chi sono",
+    "myHistory": "La mia storia"
   },
   "hero": {
     "job": "Web Developer",
     "slogan": "Trasformo idee in soluzioni all'avanguardia."
   },
-  "coverLetter": {
+  "aboutMe": {
     "1": "Sono Nicola Valentini, Web Developer specializzato in React, con esperienza a partire dal 2020.",
     "2": "Sviluppo interfacce moderne trasformando idee in soluzioni responsive e performanti.",
     "3": "Attualmente sono alla ricerca di opportunità in startup che puntano su innovazione e qualità del prodotto.",
     "4": "Contattami per scoprire come potrei portare valore al tuo team..."
+  },
+  "whoIAm": {
+    "1": "Sono uno sviluppatore web con la passione per la tecnologia e l'innovazione, sempre alla ricerca di nuove sfide.",
+    "2": "Progetto e sviluppo interfacce moderne, veloci e intuitive — partendo da mockup o anche solo da idee — con un’attenzione costante all’esperienza utente.",
+    "3": "Ho lavorato a progetti con UI complesse, anche nel settore bancario, in cui erano fondamentali codice pulito, cura della UX, scalabilità e ottimizzazione.",
+    "4": "Il mio approccio è strutturato ed efficace: Analisi – Progettazione – Sviluppo – Ottimizzazione. Il mio obiettivo? Soluzioni funzionali, responsive e ad alte prestazioni."
+  },
+  "myHistory": {
+    "1": "Sono uno sviluppatore web con la passione per la tecnologia e l'innovazione, sempre alla ricerca di nuove sfide.",
+    "2": "Progetto e sviluppo interfacce moderne, veloci e intuitive — partendo da mockup o anche solo da idee — con un’attenzione costante all’esperienza utente.",
+    "3": "Ho lavorato a progetti con UI complesse, anche nel settore bancario, in cui erano fondamentali codice pulito, cura della UX, scalabilità e ottimizzazione.",
+    "4": "Il mio approccio è strutturato ed efficace: Analisi – Progettazione – Sviluppo – Ottimizzazione. Il mio obiettivo? Soluzioni funzionali, responsive e ad alte prestazioni."
   },
   "contacts": {
     "name": "Nome",

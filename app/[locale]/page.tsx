@@ -55,7 +55,7 @@ export default function Home() {
           <div className='row-start-3 md:col-start-3'>
             <div className='flex flex-col gap-3 md:gap-5 m-auto'>
               <TextWithEntryAnimation
-                path='coverLetter.1'
+                path='aboutMe.1'
                 opaque
                 spaced
                 entry='right'
@@ -63,7 +63,7 @@ export default function Home() {
               />
 
               <TextWithEntryAnimation
-                path='coverLetter.2'
+                path='aboutMe.2'
                 opaque
                 spaced
                 entry='right'
@@ -71,7 +71,7 @@ export default function Home() {
               />
 
               <TextWithEntryAnimation
-                path='coverLetter.3'
+                path='aboutMe.3'
                 opaque
                 spaced
                 entry='right'
@@ -79,7 +79,7 @@ export default function Home() {
               />
 
               <TextWithEntryAnimation
-                path='coverLetter.4'
+                path='aboutMe.4'
                 opaque
                 spaced
                 entry='right'

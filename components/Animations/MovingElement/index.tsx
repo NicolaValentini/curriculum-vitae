@@ -14,7 +14,7 @@ type Props = {
 };
 
 export const MovingElement: FC<Props> = ({
-  className,
+  className = '',
   elementRect,
   containerRect,
   setWidth = false,
