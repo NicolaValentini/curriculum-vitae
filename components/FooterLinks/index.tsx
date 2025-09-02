@@ -1,6 +1,7 @@
 'use client';
 
-import { FC, MouseEvent, ReactNode } from 'react';
+import { FC, MouseEvent } from 'react';
+import { clsx } from 'clsx';
 import {
   FaEnvelope,
   FaGithub,
@@ -9,38 +10,31 @@ import {
   FaWhatsapp,
 } from 'react-icons/fa6';
 
-import { AppearanceAnimation, MovingElement } from '../Animations';
 import { useElementRect } from '@/utils';
-import { Text } from '../Text';
+import { AppearanceAnimation, Link, MovingElement, Text } from '@/components';
 
-type Link = {
-  key: string;
-  icon: ReactNode;
-  href?: string;
-};
-
-const links: Link[] = [
+const links = [
   {
     key: 'links.linkedin',
-    icon: <FaLinkedin />,
+    Icon: FaLinkedin,
     href: 'https://www.linkedin.com/in/nicola-valentini',
   },
   {
     key: 'links.github',
-    icon: <FaGithub />,
+    Icon: FaGithub,
     href: 'https://github.com/NicolaValentini',
   },
   {
     key: 'links.email',
-    icon: <FaEnvelope />,
+    Icon: FaEnvelope,
   },
   {
     key: 'links.phone',
-    icon: <FaWhatsapp />,
+    Icon: FaWhatsapp,
   },
   {
     key: 'links.address',
-    icon: <FaLocationDot />,
+    Icon: FaLocationDot,
   },
 ];
 
@@ -76,20 +70,14 @@ export const FooterLinks: FC = () => {
         className='relative flex items-center justify-center mt-4 md:mt-0 md:ml-4'
         onMouseLeave={() => !timeout && elementRef(null)}
       >
-        {links.map(({ key, icon, href }, index) => (
+        {links.map(({ key, Icon, href }, index) => (
           <p
             key={key}
-            className={index ? 'ml-4' : ''}
+            className={clsx(index && 'ml-4')}
             onClick={e => handleClick(e, key)}
             onMouseEnter={e => elementRef(e.currentTarget, key)}
           >
-            {href ? (
-              <a target='_blank' rel='noopener noreferrer' href={href}>
-                {icon}
-              </a>
-            ) : (
-              icon
-            )}
+            {href ? <Link href={href} Icon={Icon} /> : <Icon />}
           </p>
         ))}
 

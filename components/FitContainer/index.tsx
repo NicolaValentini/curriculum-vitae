@@ -1,6 +1,8 @@
 'use client';
 
-import { FC, ReactNode, useEffect, useRef, useState } from 'react';
+import { FC, ReactNode } from 'react';
+import { clsx } from 'clsx';
+import { useElementRect } from '@/utils';
 
 type Props = {
   centered?: boolean;
@@ -13,30 +15,17 @@ export const FitContainer: FC<Props> = ({
   className = '',
   children,
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [minSize, setSize] = useState<number>(0);
+  const { ref, rect } = useElementRect<HTMLDivElement>();
 
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const observer = new ResizeObserver(entries =>
-      setSize(
-        Math.min(
-          entries[0]?.contentRect?.width ?? 0,
-          entries[0]?.contentRect?.height ?? 0,
-        ),
-      ),
-    );
-
-    observer.observe(ref.current);
-
-    return () => observer.disconnect();
-  }, []);
+  const minSize = Math.min(rect?.width ?? 0, rect?.height ?? 0);
 
   return (
     <div
       ref={ref}
-      className={`w-full h-full ${centered ? 'flex items-center justify-center' : ''}`}
+      className={clsx(
+        'w-full h-full',
+        centered && 'flex items-center justify-center',
+      )}
     >
       <div
         className={className}

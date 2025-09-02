@@ -24,7 +24,7 @@ export type AppearanceAnimationProps = {
 export const AppearanceAnimation: FC<AppearanceAnimationProps> = ({
   as = 'div',
   delay = 0,
-  className,
+  className = '',
   show = false,
   display = 'block',
   children,

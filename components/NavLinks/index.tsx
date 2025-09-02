@@ -1,14 +1,11 @@
 'use client';
 
 import { FC, use, useEffect } from 'react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { I18nContext } from '@/context';
 import { useElementRect } from '@/utils';
-
-import { Text } from '../Text';
-import { MovingElement } from '../Animations';
+import { Link, MovingElement } from '@/components';
 
 const pages = [
   { label: 'titles.home', href: '/' },
@@ -53,9 +50,13 @@ export const NavLinks: FC<Props> = ({ onClickAction }) => {
     >
       {pages.map(({ label, href }) => (
         <li key={href} ref={el => setElementRef(el, href)}>
-          <Link href={href} onClick={onClickAction}>
-            <Text bold path={label} opaque={realPath !== href} />
-          </Link>
+          <Link
+            href={href}
+            onClickAction={onClickAction}
+            bold
+            path={label}
+            opaque={realPath !== href}
+          />
         </li>
       ))}
 

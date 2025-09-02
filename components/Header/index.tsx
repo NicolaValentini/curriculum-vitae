@@ -5,11 +5,13 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { FaFacebook } from 'react-icons/fa6';
 import { motion, useInView } from 'motion/react';
 
-import { Burger } from '../Burger';
-import { NavLinks } from '../NavLinks';
-import { LocaleSwitcher } from '../LocaleSwitcher';
-import { AppearanceAnimation } from '../Animations';
-import { DownloadResume } from '../DownloadResume';
+import {
+  AppearanceAnimation,
+  Burger,
+  DownloadResume,
+  LocaleSwitcher,
+  NavLinks,
+} from '@/components';
 
 const initialHeaderAnimate = {
   height: 'auto',

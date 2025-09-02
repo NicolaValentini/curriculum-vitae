@@ -26,10 +26,11 @@
     "4": "My workflow is structured and effective: Analyze – Design – Develop – Optimize. My focus? Functional, responsive, high-performing solutions."
   },
   "myHistory": {
-    "1": "I’m a Web Developer with a passion for technology and innovation, always looking for new challenges.",
-    "2": "I design and build modern, fast, user-friendly interfaces — from mockups or even just ideas — that put user experience first.",
-    "3": "I’ve worked on complex UI projects, including in the banking sector, that required not just clean code, but also attention to UX, scalability, and optimization.",
-    "4": "My workflow is structured and effective: Analyze – Design – Develop – Optimize. My focus? Functional, responsive, high-performing solutions."
+    "1": "My passion for programming started in middle school, driven by curiosity to understand how the games and applications we use every day actually work.",
+    "2": "I chose an educational path in computer science, where I learned languages like Java and discovered the developer profession, which eventually became my career.",
+    "3": "Over the years, I’ve put my knowledge into practice, exploring and becoming passionate about new technologies, particularly React.",
+    "4": "Today, I’m focusing on strengthening my server-side development skills with Next.js, and my next goal is to learn mobile development with React Native, to become a well-rounded React Developer.",
+    "5": "To achieve this goal, I keep working on projects that challenge my skills. Take a look at my resume to see how I turn ideas into real solutions."
   },
   "contacts": {
     "name": "Name",

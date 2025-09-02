@@ -26,10 +26,11 @@
     "4": "Il mio approccio è strutturato ed efficace: Analisi – Progettazione – Sviluppo – Ottimizzazione. Il mio obiettivo? Soluzioni funzionali, responsive e ad alte prestazioni."
   },
   "myHistory": {
-    "1": "Sono uno sviluppatore web con la passione per la tecnologia e l'innovazione, sempre alla ricerca di nuove sfide.",
-    "2": "Progetto e sviluppo interfacce moderne, veloci e intuitive — partendo da mockup o anche solo da idee — con un’attenzione costante all’esperienza utente.",
-    "3": "Ho lavorato a progetti con UI complesse, anche nel settore bancario, in cui erano fondamentali codice pulito, cura della UX, scalabilità e ottimizzazione.",
-    "4": "Il mio approccio è strutturato ed efficace: Analisi – Progettazione – Sviluppo – Ottimizzazione. Il mio obiettivo? Soluzioni funzionali, responsive e ad alte prestazioni."
+    "1": "La mia passione per la programmazione è nata alle scuole medie, spinta dalla curiosità di capire come funzionano i giochi e le applicazioni che utilizziamo ogni giorno.",
+    "2": "Ho scelto quindi un percorso di studi dedicato all’informatica, che mi ha permesso di apprendere linguaggi come Java e conoscere la professione di sviluppatore, fino a farla diventare il mio lavoro.",
+    "3": "Negli anni ho messo in pratica ciò che avevo imparato, approfondendo nuove tecnologie e appassionandomi in particolare a React.",
+    "4": "Oggi sto perfezionando le mie competenze nello sviluppo server-side con Next.js e il mio obiettivo è ampliare le mie conoscenze al mobile, con React Native, per diventare un React Developer completo.",
+    "5": "Per raggiungere questo obiettivo, continuo a lavorare su progetti che mettono alla prova le mie competenze. Dai un’occhiata al mio curriculum per scoprire come trasformo le idee in soluzioni concrete."
   },
   "contacts": {
     "name": "Nome",

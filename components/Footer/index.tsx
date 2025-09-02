@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { FaRegCopyright } from 'react-icons/fa6';
 
-import { FooterLinks } from '../FooterLinks';
+import { FooterLinks } from '@/components';
 
 export const Footer: FC = () => {
   return (

@@ -1,49 +1,34 @@
-'use client';
-
-import { FC, use, useRef } from 'react';
-import { get } from 'lodash';
+import { FC } from 'react';
 import { FaFileArrowDown } from 'react-icons/fa6';
 
-import { I18nContext } from '@/context';
-
-import { withEntryAnimation } from '../Animations';
+import { Link, withEntryAnimation } from '@/components';
 
 type Props = {
   type?: 'text' | 'icon';
 };
 
-export const DownloadResume: FC<Props> = ({ type = 'text' }) => {
-  const { dictionary } = use(I18nContext);
-  const linkRef = useRef<HTMLAnchorElement>(null);
-
+const DownloadResumeBase: FC<Props> = ({ type = 'text' }) => {
   if (type === 'icon') {
     return (
-      <>
-        <a
-          download
-          ref={linkRef}
-          className='hidden'
-          href='/files/cv-valentini-nicola.pdf'
-        />
-
-        <FaFileArrowDown
-          className='cursor-pointer'
-          onClick={() => linkRef?.current?.click()}
-        />
-      </>
+      <Link
+        download
+        Icon={FaFileArrowDown}
+        href='/files/cv-valentini-nicola.pdf'
+      />
     );
   }
 
   return (
-    <a
+    <Link
+      button
       download
+      path='downloadResume'
       href='/files/cv-valentini-nicola.pdf'
-      className='block w-fit bg-(--text-secondary)/80 px-6 py-3 rounded-lg tracking-widest text-xs md:text-sm xl:text-base'
-    >
-      {get(dictionary, 'downloadResume', '')}
-    </a>
+      contentClassName='text-xs md:text-sm xl:text-base'
+    />
   );
 };
 
-export const DownloadResumeWithEntryAnimation =
-  withEntryAnimation<Props>(DownloadResume);
+export const DownloadResume = Object.assign(DownloadResumeBase, {
+  Entry: withEntryAnimation<Props>(DownloadResumeBase),
+});

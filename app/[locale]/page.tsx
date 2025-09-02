@@ -1,7 +1,6 @@
-import {
-  DownloadResumeWithEntryAnimation,
-  TextWithEntryAnimation,
-} from '@/components';
+import { Contacts, DownloadResume, Link, Text } from '@/components';
+
+const ABOUT_ME_PATHS = ['aboutMe.1', 'aboutMe.2', 'aboutMe.3', 'aboutMe.4'];
 
 export default function Home() {
   return (
@@ -14,14 +13,14 @@ export default function Home() {
 
           <div className='row-start-1 col-start-1 self-end h-2/5 md:h-full px-8 md:px-0'>
             <div className='w-fit h-full flex flex-col justify-center gap-3 md:gap-5 m-[0_auto]'>
-              <TextWithEntryAnimation
+              <Text.Entry
                 path='nameSurname'
                 spaced
                 semibold
                 className='text-3xl sm:text-4xl xl:text-5xl'
               />
 
-              <TextWithEntryAnimation
+              <Text.Entry
                 path='hero.job'
                 spaced
                 semibold
@@ -29,14 +28,14 @@ export default function Home() {
                 className='text-xl sm:text-2xl xl:text-3xl'
               />
 
-              <TextWithEntryAnimation
+              <Text.Entry
                 path='hero.slogan'
                 opaque
                 spaced
                 className='w-fit text-base sm:text-lg xl:text-xl'
               />
 
-              <DownloadResumeWithEntryAnimation />
+              <DownloadResume.Entry />
             </div>
           </div>
         </div>
@@ -44,46 +43,31 @@ export default function Home() {
 
       <section className='min-h-[64vh] overflow-hidden px-8 sm:px-16 md:px-0'>
         <div className='w-full h-full grid grid-rows-[16vh_16vh_minmax(32vh,min-content)] md:grid-cols-[1fr_2fr_2fr_1fr]'>
-          <TextWithEntryAnimation
+          <Text.Entry
             path='titles.aboutMe'
             spaced
             semibold
             className='text-xl sm:text-2xl xl:text-3xl'
-            wrapperClassName='row-start-2 md:col-start-2 m-[0_auto]'
+            animationClassName='row-start-2 md:col-start-2 m-[0_auto]'
           />
 
           <div className='row-start-3 md:col-start-3'>
             <div className='flex flex-col gap-3 md:gap-5 m-auto'>
-              <TextWithEntryAnimation
-                path='aboutMe.1'
+              <Text.EntryList
+                paths={ABOUT_ME_PATHS}
                 opaque
                 spaced
                 entry='right'
-                className='text-center text-base sm:text-lg xl:text-xl'
               />
 
-              <TextWithEntryAnimation
-                path='aboutMe.2'
-                opaque
-                spaced
+              <Link.Entry
+                button
+                href='/who-i-am'
+                bold
+                path='titles.aboutMe'
+                contentClassName='text-xs md:text-sm xl:text-base'
                 entry='right'
-                className='text-center text-base sm:text-lg xl:text-xl'
-              />
-
-              <TextWithEntryAnimation
-                path='aboutMe.3'
-                opaque
-                spaced
-                entry='right'
-                className='text-center text-base sm:text-lg xl:text-xl'
-              />
-
-              <TextWithEntryAnimation
-                path='aboutMe.4'
-                opaque
-                spaced
-                entry='right'
-                className='text-center text-base sm:text-lg xl:text-xl'
+                animationClassName='self-center'
               />
             </div>
           </div>
@@ -91,106 +75,17 @@ export default function Home() {
       </section>
 
       <section className='min-h-[64vh] overflow-hidden px-8 sm:px-16 md:px-0'>
-        <div className='w-full h-full grid grid-rows-[16vh_16vh_minmax(32vh,min-content)] md:grid-cols-[1fr_auto_1fr]'>
-          <TextWithEntryAnimation
+        <div className='w-full h-full grid grid-rows-[16vh_16vh_minmax(32vh,min-content)] md:grid-cols-[1fr_2fr_1fr]'>
+          <Text.Entry
             path='titles.contacts'
             spaced
             semibold
             className='text-xl sm:text-2xl xl:text-3xl'
-            wrapperClassName='row-start-2 md:col-start-2 m-[0_auto]'
+            animationClassName='row-start-2 md:col-start-2 m-[0_auto]'
           />
 
-          <div className='row-start-3 md:col-start-2 m-auto grid grid-cols-[1fr_2fr] md:grid-cols-2 w-full'>
-            <TextWithEntryAnimation
-              path='contacts.name'
-              opaque
-              spaced
-              className='p-2.5 md:p-4 text-base sm:text-lg xl:text-xl'
-            />
-
-            <TextWithEntryAnimation
-              path='nameSurname'
-              opaque
-              spaced
-              entry='right'
-              className='p-2.5 md:p-4 text-right text-base sm:text-lg xl:text-xl'
-            />
-
-            <div className='border-t border-gray-300'>
-              <TextWithEntryAnimation
-                path='contacts.email'
-                opaque
-                spaced
-                className='p-2.5 md:p-4 text-base sm:text-lg xl:text-xl'
-              />
-            </div>
-
-            <div className='border-t border-gray-300'>
-              <TextWithEntryAnimation
-                path='links.email'
-                opaque
-                spaced
-                entry='right'
-                className='p-2.5 md:p-4 text-right text-base sm:text-lg xl:text-xl'
-              />
-            </div>
-
-            <div className='border-t border-gray-300'>
-              <TextWithEntryAnimation
-                path='contacts.phone'
-                opaque
-                spaced
-                className='p-2.5 md:p-4 text-base sm:text-lg xl:text-xl'
-              />
-            </div>
-
-            <div className='border-t border-gray-300'>
-              <TextWithEntryAnimation
-                path='links.phone'
-                opaque
-                spaced
-                entry='right'
-                className='p-2.5 md:p-4 text-right text-base sm:text-lg xl:text-xl'
-              />
-            </div>
-
-            <div className='border-t border-gray-300'>
-              <TextWithEntryAnimation
-                path='contacts.linkedin'
-                opaque
-                spaced
-                className='p-2.5 md:p-4 text-base sm:text-lg xl:text-xl'
-              />
-            </div>
-
-            <div className='border-t border-gray-300'>
-              <TextWithEntryAnimation
-                path='links.linkedin'
-                opaque
-                spaced
-                entry='right'
-                className='p-2.5 md:p-4 text-right text-base sm:text-lg xl:text-xl'
-              />
-            </div>
-
-            <div className='border-t border-gray-300'>
-              <TextWithEntryAnimation
-                path='contacts.address'
-                opaque
-                spaced
-                className='p-2.5 md:p-4 text-base sm:text-lg xl:text-xl'
-              />
-            </div>
-
-            <div className='border-t border-gray-300'>
-              <TextWithEntryAnimation
-                path='links.address'
-                opaque
-                spaced
-                entry='right'
-                className='p-2.5 md:p-4 text-right text-base sm:text-lg xl:text-xl'
-              />
-            </div>
+          <div className='row-start-3 md:col-start-2'>
+            <Contacts />
           </div>
         </div>
       </section>

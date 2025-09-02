@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import { i18n, Locale } from '../../i18n-config';
@@ -18,14 +19,14 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Nicola Valentini',
   description: 'My curriculum vitae made with next - 2025',
 };
 
 type Props = {
   children: ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 };
 
 export async function generateStaticParams() {
@@ -33,7 +34,7 @@ export async function generateStaticParams() {
 }
 
 export default async function RootLayout(props: Props) {
-  const { locale } = await props.params;
+  const locale = (await props.params).locale as Locale;
 
   const dictionary = await getDictionary(locale);
 
