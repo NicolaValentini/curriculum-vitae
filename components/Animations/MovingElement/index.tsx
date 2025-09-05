@@ -3,26 +3,30 @@
 import { FC, ReactNode, useLayoutEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 
-const initial = { left: 0 };
+type Animate = { left: number; top?: number; width?: number };
 
-type Props = {
-  setWidth?: boolean;
+const initialAnimate: Animate = { left: 0 };
+
+export type Props = {
+  place?: 'top' | 'bottom';
+  centered?: boolean;
   className?: string;
   elementRect: DOMRect | null;
   containerRect: DOMRect | null;
+  widthAsElement?: boolean;
   children?: ReactNode;
 };
 
 export const MovingElement: FC<Props> = ({
-  className = '',
+  place = 'top',
+  centered,
+  className,
   elementRect,
   containerRect,
-  setWidth = false,
+  widthAsElement,
   children,
 }) => {
-  const [animate, setAnimate] = useState<{ left: number; width?: number }>(
-    initial,
-  );
+  const [animate, setAnimate] = useState<Animate>(initialAnimate);
 
   useLayoutEffect(() => {
     setAnimate(prev => {
@@ -30,21 +34,32 @@ export const MovingElement: FC<Props> = ({
 
       copy.left = (elementRect?.left ?? 0) - (containerRect?.left ?? 0);
 
-      if (setWidth) {
+      if (centered) {
+        copy.left += (elementRect?.width ?? 0) / 2;
+      }
+
+      if (widthAsElement) {
         copy.width = elementRect?.width ?? 0;
+      }
+
+      if (place === 'bottom') {
+        copy.top =
+          (elementRect?.top ?? 0) -
+          (containerRect?.top ?? 0) +
+          (elementRect?.height ?? 0);
       }
 
       return copy;
     });
-  }, [containerRect, elementRect, setWidth]);
+  }, [containerRect, elementRect, widthAsElement, place, centered]);
 
   return (
     <AnimatePresence>
       <motion.div
         className={className}
-        initial={initial}
+        initial={initialAnimate}
         animate={animate}
-        exit={initial}
+        exit={initialAnimate}
       >
         {children}
       </motion.div>

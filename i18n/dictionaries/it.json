@@ -7,7 +7,12 @@
     "resume": "Curriculum",
     "contacts": "Contatti",
     "whoIAm": "Chi sono",
-    "myHistory": "La mia storia"
+    "myHistory": "La mia storia",
+    "hobbies": "Hobbies & interessi",
+    "experience": "Esperienze",
+    "training": "Formazione",
+    "education": "Studi",
+    "skills": "Competenze"
   },
   "hero": {
     "job": "Web Developer",
@@ -31,6 +36,93 @@
     "3": "Negli anni ho messo in pratica ciò che avevo imparato, approfondendo nuove tecnologie e appassionandomi in particolare a React.",
     "4": "Oggi sto perfezionando le mie competenze nello sviluppo server-side con Next.js e il mio obiettivo è ampliare le mie conoscenze al mobile, con React Native, per diventare un React Developer completo.",
     "5": "Per raggiungere questo obiettivo, continuo a lavorare su progetti che mettono alla prova le mie competenze. Dai un’occhiata al mio curriculum per scoprire come trasformo le idee in soluzioni concrete."
+  },
+  "experience": {
+    "nttData2024": {
+      "date": "01/2024 - Presente",
+      "company": "Top Network S.p.A.",
+      "role": "Front-end React developer",
+      "description": "Sviluppo, mantenimento e miglioramento di una applicazione hub di Ntt Data che gestisce il flusso di lavoro di HDI Assicurazioni"
+    },
+    "illimity2022": {
+      "date": "01/2022 - 12/2024",
+      "company": "Omicron Consulting S.r.l. - Top Network S.p.A.",
+      "role": "Front-end React developer",
+      "description": "Analisi, implementazione e test di funzionalità per gli applicativi di Illimity Bank per la gestione delle micro-imprese e del credito"
+    },
+    "italiacamp2021": {
+      "date": "01/2021 – 12/2021",
+      "company": "Omicron Consulting S.r.l.",
+      "role": "Front-end React developer",
+      "description": "Progettazione funzionale e tecnica, e sviluppo di un nuovo applicativo per Italiacamp per la ricerca tramite IA di startup"
+    },
+    "omicron2020": {
+      "date": "10/2020 – 12/2020",
+      "company": "Omicron Consulting S.r.l.",
+      "role": "Full-stack developer",
+      "description": "Sviluppo e correzione dei bug del gestionale aziendale per la soprintendenza delle commesse, delle fatturazioni e delle risorse"
+    }
+  },
+  "training": {
+    "regional": {
+      "name": "Corso Garanzia Giovani con Tirocinio",
+      "description": "Java",
+      "link": "https://www.progettogiovani.pd.it/corsi-e-stage-professionalizzanti-in-partenza"
+    },
+    "reactBeginner": {
+      "name": "Corso Online React per Principianti",
+      "description": "React 15",
+      "link": "https://codewithmosh.com/p/ultimate-react-part1"
+    },
+    "git": {
+      "name": "Libro Git",
+      "description": "Git",
+      "link": "https://www.apogeonline.com/libri/git-ferdinando-santacroce/?srsltid=AfmBOorw81PJgoaNygrfAPQoNxqM1K8k__Pv5rEauBrbDAQQLoTv6tlg"
+    },
+    "cleanCode": {
+      "name": "Corso Online Clean Code",
+      "description": "Clean Code",
+      "link": "https://www.udemy.com/course/writing-clean-code"
+    },
+    "css": {
+      "name": "Corso Online Css",
+      "description": "Css - Scss - Sass",
+      "link": "https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass"
+    },
+    "react19": {
+      "name": "Corso Online React",
+      "description": "React 19",
+      "link": "https://www.udemy.com/course/react-the-complete-guide-incl-redux"
+    },
+    "next15": {
+      "name": "Corso Online Next.js",
+      "description": "Next 15",
+      "link": "https://www.udemy.com/course/nextjs-react-the-complete-guide"
+    },
+    "reactNative": {
+      "name": "Corso Online React Native - In Corso",
+      "description": "React Native",
+      "link": "https://www.udemy.com/course/react-native-the-practical-guide"
+    }
+  },
+  "education": {
+    "highSchool": {
+      "name": "Istituto di Istruzione Superiore “Newton - Pertini” - Camposampiero (PD)",
+      "description": "Diploma di Istituto Tecnico Settore Tecnologico indirizzo “Informatica e Telecomunicazioni” articolazione “Informatica”",
+      "date": "09/2014 - 07/2019",
+      "link": "https://www.newtonpertini.edu.it/"
+    }
+  },
+  "skill": {
+    "html": "HTML / CSS / SCSS / SASS",
+    "react": "React / Next.js / JavaScript / TypeScript",
+    "library": "Redux + Saga / Material UI / Bootstrap / Tailwind / Jest",
+    "backend": "Java / Microsoft SQL / MongoDB",
+    "workflow": "Git / Azure / Jira / Husky",
+    "ruler": "Ottimizzazione / Pulizia del Codice / Test",
+    "responsive": "Mobile First / Responsive Design",
+    "calendar": "Organizzato / Preciso / Puntuale",
+    "team": "Collaborativo / Comunicazione Efficace"
   },
   "contacts": {
     "name": "Nome",

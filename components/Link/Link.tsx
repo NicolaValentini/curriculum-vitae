@@ -1,14 +1,15 @@
 'use client';
 
-import { FC, MouseEvent, useRef } from 'react';
+import { FC, MouseEvent, use, useRef } from 'react';
 import { clsx } from 'clsx';
+import { get } from 'lodash';
 import NextLink from 'next/link';
 import { IconType } from 'react-icons';
 
-import { Text, TextProps, withEntryAnimation } from '@/components';
+import { Text, TextProps } from '@/components';
+import { I18nContext } from '@/context';
 
 type BaseProps = {
-  href: string;
   button?: boolean;
   download?: boolean;
   className?: string;
@@ -16,34 +17,52 @@ type BaseProps = {
   onClickAction?: (
     e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
   ) => void;
-} & Omit<TextProps, 'path' | 'className'>;
+};
 
-type IconVariant = BaseProps & {
+type HrefProps = {
+  href: string;
+  hrefPath?: never;
+};
+type HrefPathProps = {
+  href?: never;
+  hrefPath: TextProps['path'];
+};
+
+type IconVariant = {
   Icon: IconType;
   path?: never;
+  isNavLink?: never;
 };
-type TextVariant = BaseProps & {
+type TextVariant = {
   Icon?: never;
   path: string;
-};
+  isNavLink?: boolean;
+} & Omit<TextProps, 'className'>;
 
-export type Props = IconVariant | TextVariant;
+export type Props = BaseProps &
+  (HrefProps | HrefPathProps) &
+  (IconVariant | TextVariant);
 
 const isExternal = (href: string) =>
   href.startsWith('http') || href.startsWith('//');
 
 export const LinkBase: FC<Props> = ({
   href,
+  hrefPath,
   Icon,
   path,
   button,
   download,
+  isNavLink,
   onClickAction,
   className = '',
   contentClassName = '',
   ...textProps
 }) => {
+  const { dictionary } = use(I18nContext);
   const linkRef = useRef<HTMLAnchorElement>(null);
+
+  const _href = href ?? get(dictionary, hrefPath, '/');
 
   const wrapperClassName = clsx(
     className,
@@ -51,24 +70,35 @@ export const LinkBase: FC<Props> = ({
       'block w-fit bg-(--text-secondary)/80 px-6 py-3 rounded-lg tracking-widest',
   );
 
-  const content = Icon ? (
-    <Icon
-      role='link'
-      tabIndex={0}
-      aria-label='Open link'
-      className={clsx('cursor-pointer', contentClassName)}
-      onClick={() => linkRef?.current?.click()}
-    />
-  ) : (
-    <Text path={path} className={contentClassName} {...textProps} />
-  );
+  let content;
+
+  if (Icon) {
+    content = (
+      <Icon
+        role='link'
+        tabIndex={0}
+        aria-label='Open link'
+        className={clsx('cursor-pointer', contentClassName)}
+        onClick={() => linkRef?.current?.click()}
+      />
+    );
+  } else {
+    const Component = isNavLink ? Text : Text.Link;
+    content = (
+      <Component
+        path={path}
+        className={contentClassName}
+        {...(textProps ?? {})}
+      />
+    );
+  }
 
   if (download) {
     return (
       <div>
         <a
           download
-          href={href}
+          href={_href}
           ref={linkRef}
           className={clsx(!Icon && wrapperClassName)}
         >
@@ -80,10 +110,10 @@ export const LinkBase: FC<Props> = ({
     );
   }
 
-  if (isExternal(href)) {
+  if (isExternal(_href)) {
     return (
       <a
-        href={href}
+        href={_href}
         target='_blank'
         rel='noopener noreferrer'
         className={wrapperClassName}
@@ -95,7 +125,7 @@ export const LinkBase: FC<Props> = ({
 
   return (
     <NextLink
-      href={href}
+      href={_href}
       className={wrapperClassName}
       onClick={e => onClickAction?.(e)}
     >
@@ -103,7 +133,3 @@ export const LinkBase: FC<Props> = ({
     </NextLink>
   );
 };
-
-export const Link = Object.assign(LinkBase, {
-  Entry: withEntryAnimation<Props>(LinkBase),
-});

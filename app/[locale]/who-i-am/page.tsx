@@ -9,17 +9,16 @@ const MY_HISTORY_PATHS = [
   'myHistory.5',
 ];
 
-export default function AboutPage() {
+export default function WhoIAmPage() {
   return (
     <main>
       <section className='min-h-[64vh] overflow-hidden px-8 sm:px-16 lg:px-0'>
-        <div className='w-full h-full grid grid-rows-[16vh_16vh_minmax(32vh,min-content)] lg:grid-cols-[1fr_2fr_2fr_1fr]'>
-          <Text.Entry
+        <div className='w-full h-full grid grid-rows-[minmax(16vh,min-content)_minmax(16vh,min-content)_minmax(32vh,min-content)] lg:grid-cols-[1fr_2fr_2fr_1fr]'>
+          <Text.EntryTitle
             path='titles.whoIAm'
             spaced
             semibold
             entry='right'
-            className='text-xl sm:text-2xl xl:text-3xl'
             animationClassName='row-start-2 lg:col-start-3 m-[0_auto]'
           />
 
@@ -37,12 +36,11 @@ export default function AboutPage() {
       </section>
 
       <section className='min-h-[64vh] overflow-hidden px-8 sm:px-16 lg:px-0'>
-        <div className='w-full h-full grid grid-rows-[16vh_16vh_minmax(32vh,min-content)] lg:grid-cols-[1fr_2fr_1fr]'>
-          <Text.Entry
+        <div className='w-full h-full grid grid-rows-[minmax(16vh,min-content)_minmax(16vh,min-content)_minmax(32vh,min-content)] lg:grid-cols-[1fr_2fr_1fr]'>
+          <Text.EntryTitle
             path='titles.myHistory'
             spaced
             semibold
-            className='text-xl sm:text-2xl xl:text-3xl'
             animationClassName='row-start-2 lg:col-start-2 m-[0_auto]'
           />
 
@@ -55,7 +53,6 @@ export default function AboutPage() {
                 href='/resume'
                 bold
                 path='titles.resume'
-                contentClassName='text-xs md:text-sm xl:text-base'
                 animationClassName='self-center'
               />
             </div>

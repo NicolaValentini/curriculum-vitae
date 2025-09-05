@@ -20,19 +20,13 @@ export default function Home() {
                 className='text-3xl sm:text-4xl xl:text-5xl'
               />
 
-              <Text.Entry
-                path='hero.job'
-                spaced
-                semibold
-                secondary
-                className='text-xl sm:text-2xl xl:text-3xl'
-              />
+              <Text.EntryTitle path='hero.job' spaced semibold secondary />
 
-              <Text.Entry
+              <Text.EntryParagraph
                 path='hero.slogan'
                 opaque
                 spaced
-                className='w-fit text-base sm:text-lg xl:text-xl'
+                className='w-fit'
               />
 
               <DownloadResume.Entry />
@@ -42,12 +36,11 @@ export default function Home() {
       </section>
 
       <section className='min-h-[64vh] overflow-hidden px-8 sm:px-16 md:px-0'>
-        <div className='w-full h-full grid grid-rows-[16vh_16vh_minmax(32vh,min-content)] md:grid-cols-[1fr_2fr_2fr_1fr]'>
-          <Text.Entry
+        <div className='w-full h-full grid grid-rows-[minmax(16vh,min-content)_minmax(16vh,min-content)_minmax(32vh,min-content)] md:grid-cols-[1fr_2fr_2fr_1fr]'>
+          <Text.EntryTitle
             path='titles.aboutMe'
             spaced
             semibold
-            className='text-xl sm:text-2xl xl:text-3xl'
             animationClassName='row-start-2 md:col-start-2 m-[0_auto]'
           />
 
@@ -65,7 +58,6 @@ export default function Home() {
                 href='/who-i-am'
                 bold
                 path='titles.aboutMe'
-                contentClassName='text-xs md:text-sm xl:text-base'
                 entry='right'
                 animationClassName='self-center'
               />
@@ -75,12 +67,11 @@ export default function Home() {
       </section>
 
       <section className='min-h-[64vh] overflow-hidden px-8 sm:px-16 md:px-0'>
-        <div className='w-full h-full grid grid-rows-[16vh_16vh_minmax(32vh,min-content)] md:grid-cols-[1fr_2fr_1fr]'>
-          <Text.Entry
+        <div className='w-full h-full grid grid-rows-[minmax(16vh,min-content)_minmax(16vh,min-content)_minmax(32vh,min-content)] md:grid-cols-[1fr_2fr_1fr]'>
+          <Text.EntryTitle
             path='titles.contacts'
             spaced
             semibold
-            className='text-xl sm:text-2xl xl:text-3xl'
             animationClassName='row-start-2 md:col-start-2 m-[0_auto]'
           />
 

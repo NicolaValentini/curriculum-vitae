@@ -51,17 +51,19 @@ export const NavLinks: FC<Props> = ({ onClickAction }) => {
       {pages.map(({ label, href }) => (
         <li key={href} ref={el => setElementRef(el, href)}>
           <Link
+            isNavLink
             href={href}
             onClickAction={onClickAction}
             bold
             path={label}
             opaque={realPath !== href}
+            contentClassName='text-base md:text-base xl:text-base'
           />
         </li>
       ))}
 
       <MovingElement
-        setWidth
+        widthAsElement
         elementRect={elementRect}
         containerRect={containerRect}
         className='hidden md:block absolute bottom-0 h-0.5 bg-(--text-primary) rounded'

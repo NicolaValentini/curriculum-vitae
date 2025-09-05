@@ -81,8 +81,9 @@ export const FooterLinks: FC = () => {
           </p>
         ))}
 
-        <AppearanceAnimation show={!!path} delay={0.1}>
+        <AppearanceAnimation show={!!(path && elementRect)} delay={0.1}>
           <MovingElement
+            centered
             elementRect={elementRect}
             containerRect={containerRect}
             className='absolute -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 rounded-md bg-gray-800 text-white text-sm shadow-lg whitespace-nowrap z-10'

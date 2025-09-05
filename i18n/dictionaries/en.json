@@ -7,7 +7,12 @@
     "resume": "Resume",
     "contacts": "Contacts",
     "whoIAm": "Who I Am",
-    "myHistory": "My history"
+    "myHistory": "My history",
+    "hobbies": "Hobbies & interests",
+    "experience": "Experience",
+    "training": "Training",
+    "education": "Education",
+    "skills": "Skills"
   },
   "hero": {
     "job": "Web Developer",
@@ -31,6 +36,93 @@
     "3": "Over the years, I’ve put my knowledge into practice, exploring and becoming passionate about new technologies, particularly React.",
     "4": "Today, I’m focusing on strengthening my server-side development skills with Next.js, and my next goal is to learn mobile development with React Native, to become a well-rounded React Developer.",
     "5": "To achieve this goal, I keep working on projects that challenge my skills. Take a look at my resume to see how I turn ideas into real solutions."
+  },
+  "experience": {
+    "nttData2024": {
+      "date": "01/2024 - Now",
+      "company": "Top Network S.p.A.",
+      "role": "Front-end React developer",
+      "description": "Development, maintenance, and enhancement of an NTT Data hub application managing the workflow of HDI Assicurazioni"
+    },
+    "illimity2022": {
+      "date": "01/2022 - 12/2024",
+      "company": "Omicron Consulting S.r.l. - Top Network S.p.A.",
+      "role": "Front-end React developer",
+      "description": "Analysis, implementation, and testing of features for Illimity Bank applications supporting micro-enterprise and credit management"
+    },
+    "italiacamp2021": {
+      "date": "01/2021 – 12/2021",
+      "company": "Omicron Consulting S.r.l.",
+      "role": "Front-end React developer",
+      "description": "Functional and technical design, and development of a new application for Italiacamp enabling AI-powered startup search"
+    },
+    "omicron2020": {
+      "date": "10/2020 – 12/2020",
+      "company": "Omicron Consulting S.r.l.",
+      "role": "Full-stack developer",
+      "description": "Development and bug fixing of the company management system for overseeing projects, invoicing, and resources"
+    }
+  },
+  "training": {
+    "regional": {
+      "name": "Regional Course with Internship",
+      "description": "Java",
+      "link": "https://www.progettogiovani.pd.it/corsi-e-stage-professionalizzanti-in-partenza"
+    },
+    "reactBeginner": {
+      "name": "React Online Course for Beginners",
+      "description": "React 15",
+      "link": "https://codewithmosh.com/p/ultimate-react-part1"
+    },
+    "git": {
+      "name": "Git Book",
+      "description": "Git",
+      "link": "https://www.apogeonline.com/libri/git-ferdinando-santacroce/?srsltid=AfmBOorw81PJgoaNygrfAPQoNxqM1K8k__Pv5rEauBrbDAQQLoTv6tlg"
+    },
+    "cleanCode": {
+      "name": "Clean Code Online Course",
+      "description": "Clean Code",
+      "link": "https://www.udemy.com/course/writing-clean-code"
+    },
+    "css": {
+      "name": "Css Online Course",
+      "description": "Css - Scss - Sass",
+      "link": "https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass"
+    },
+    "react19": {
+      "name": "React Online Course",
+      "description": "React 19",
+      "link": "https://www.udemy.com/course/react-the-complete-guide-incl-redux"
+    },
+    "next15": {
+      "name": "Next.js Online Course",
+      "description": "Next 15",
+      "link": "https://www.udemy.com/course/nextjs-react-the-complete-guide"
+    },
+    "reactNative": {
+      "name": "React Native Online Course - In Progress",
+      "description": "React Native",
+      "link": "https://www.udemy.com/course/react-native-the-practical-guide"
+    }
+  },
+  "education": {
+    "highSchool": {
+      "name": "Newton-Pertini High School - Camposampiero (PD)",
+      "description": "Diploma from Technical Institute Technological Sector specialization in “Computer Science and Telecommunications” major in “Computer Science”",
+      "date": "09/2014 - 07/2019",
+      "link": "https://www.newtonpertini.edu.it/"
+    }
+  },
+  "skill": {
+    "html": "HTML / CSS / SCSS / SASS",
+    "react": "React / Next.js / JavaScript / TypeScript",
+    "library": "Redux + Saga / Material UI / Bootstrap / Tailwind / Jest",
+    "backend": "Java / Microsoft SQL / MongoDB",
+    "workflow": "Git / Azure / Jira / Husky",
+    "ruler": "Optimization / Clean Code",
+    "responsive": "Mobile First / Responsive Design",
+    "calendar": "Organized / Detail-Oriented / Punctual",
+    "team": "Team Player / Excellent Communication"
   },
   "contacts": {
     "name": "Name",

@@ -24,7 +24,6 @@ const DownloadResumeBase: FC<Props> = ({ type = 'text' }) => {
       download
       path='downloadResume'
       href='/files/cv-valentini-nicola.pdf'
-      contentClassName='text-xs md:text-sm xl:text-base'
     />
   );
 };

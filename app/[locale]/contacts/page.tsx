@@ -1,6 +1,6 @@
 const section = 'h-screen text-center content-center';
 
-export default function WhoIAm() {
+export default function Contacts() {
   return (
     <>
       <main>

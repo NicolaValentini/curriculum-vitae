@@ -11,12 +11,17 @@ export type TextListProps = Omit<TextProps, 'path' | 'className'> & {
 export const TextList: FC<TextListProps> = ({
   paths,
   className = 'flex flex-col gap-3 md:gap-5 m-auto',
-  textClassName = 'text-center text-base sm:text-lg xl:text-xl',
+  textClassName = 'text-center',
   ...rest
 }) => (
   <div className={className}>
     {paths.map(path => (
-      <Text key={path} path={path} className={textClassName} {...rest} />
+      <Text.Paragraph
+        key={path}
+        path={path}
+        className={textClassName}
+        {...rest}
+      />
     ))}
   </div>
 );

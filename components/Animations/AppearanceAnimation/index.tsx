@@ -41,7 +41,7 @@ export const AppearanceAnimation: FC<AppearanceAnimationProps> = ({
             opacity: 1,
             display,
             transition: {
-              opacity: { duration: 0.3, delay: delay + 0.1 },
+              opacity: { duration: 0.3, delay: delay + 0.2 },
               display: { duration: 0, delay },
             },
           }}

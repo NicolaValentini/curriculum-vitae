@@ -16,7 +16,7 @@ const CONTACTS: Contact[] = [
 type Props = { className?: string };
 
 export const Contacts: FC<Props> = ({ className }) => {
-  const cellClassName = 'p-2.5 md:p-4 text-base sm:text-lg xl:text-xl';
+  const cellClassName = 'p-2.5 md:p-4';
 
   return (
     <table className={clsx('w-full', className)}>
@@ -27,7 +27,7 @@ export const Contacts: FC<Props> = ({ className }) => {
             className={clsx({ 'border-t border-gray-300': index !== 0 })}
           >
             <td>
-              <Text.Entry
+              <Text.EntryParagraph
                 path={contact.label}
                 opaque
                 spaced
@@ -36,7 +36,7 @@ export const Contacts: FC<Props> = ({ className }) => {
               />
             </td>
             <td className='text-right'>
-              <Text.Entry
+              <Text.EntryParagraph
                 path={contact.value}
                 opaque
                 spaced

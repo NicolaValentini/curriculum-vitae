@@ -12,7 +12,7 @@ const isSameRect = (a: DOMRect | null, b: DOMRect | null) => {
   );
 };
 
-export function useElementRect<T extends HTMLElement>() {
+export function useElementRect<T extends HTMLElement | SVGElement>() {
   const nodeRef = useRef<T | null>(null);
   const frame = useRef<number | null>(null);
   const [rect, setRect] = useState<DOMRect | null>(null);
