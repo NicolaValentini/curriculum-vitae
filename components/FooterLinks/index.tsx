@@ -74,7 +74,7 @@ export const FooterLinks: FC = () => {
           <p
             key={key}
             className={clsx(index && 'ml-4')}
-            onClick={e => handleClick(e, key)}
+            onClick={e => !href && handleClick(e, key)}
             onMouseEnter={e => elementRef(e.currentTarget, key)}
           >
             {href ? <Link href={href} Icon={Icon} /> : <Icon />}
