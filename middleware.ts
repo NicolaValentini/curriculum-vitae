@@ -29,6 +29,7 @@ export function middleware(request: NextRequest) {
   if (
     [
       '/files/cv-valentini-nicola.pdf',
+      '/images/cv.jpg',
       '/images/me.jpg',
       '/images/avatar.jpg',
       '/images/next-template.png',

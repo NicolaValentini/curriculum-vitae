@@ -1,11 +1,11 @@
 const section = 'h-screen text-center content-center';
 
-export default function Contacts() {
+export default function Projects() {
   return (
     <>
       <main>
         <section className={section}>
-          <p className='font-semibold text-xl textShadow'>Contacts</p>
+          <p className='font-semibold text-xl textShadow'>Projects</p>
         </section>
 
         <section className={section}>

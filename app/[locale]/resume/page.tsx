@@ -1,4 +1,12 @@
-import { Education, Experiences, Skills, Text, Trainings } from '@/components';
+import {
+  Education,
+  EntryAnimation,
+  Experiences,
+  Link,
+  Skills,
+  Text,
+  Trainings,
+} from '@/components';
 
 export default function Resume() {
   return (
@@ -51,6 +59,33 @@ export default function Resume() {
           />
 
           <Skills />
+        </div>
+
+        <div className='w-full lg:w-2/3 xl:w-1/2'>
+          <Text.EntryTitle
+            path='titles.projects'
+            spaced
+            semibold
+            animationClassName='min-h-[16vh]'
+          />
+
+          <div className='grid grid-cols-1 lg:grid-cols-3'>
+            <EntryAnimation className='h-[32vh] aspect-square bg-[url("/images/next-template.png")] bg-cover' />
+
+            <EntryAnimation className='h-[32vh] aspect-square bg-[url("/images/cv.jpg")] bg-cover' />
+
+            <div className='flex flex-col gap-3 md:gap-5 m-auto'>
+              <Text.EntryParagraph path='continue' spaced opaque />
+
+              <Link.Entry
+                button
+                href='/projects'
+                bold
+                path='titles.projects'
+                animationClassName='place-self-center'
+              />
+            </div>
+          </div>
         </div>
       </section>
     </main>

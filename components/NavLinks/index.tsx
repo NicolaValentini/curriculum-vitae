@@ -11,7 +11,7 @@ const pages = [
   { label: 'titles.home', href: '/' },
   { label: 'titles.aboutMe', href: '/who-i-am' },
   { label: 'titles.resume', href: '/resume' },
-  { label: 'titles.contacts', href: '/contacts' },
+  { label: 'titles.projects', href: '/projects' },
 ];
 
 type Props = {

@@ -1,6 +1,7 @@
 {
   "nameSurname": "Nicola Valentini",
   "downloadResume": "Download Curriculum",
+  "continue": "Continua a...",
   "titles": {
     "home": "Home",
     "aboutMe": "Su di me",
@@ -13,7 +14,7 @@
     "training": "Formazione",
     "education": "Studi",
     "skills": "Competenze",
-    "projects": "Projects"
+    "projects": "Progetti"
   },
   "hero": {
     "job": "Web Developer",
