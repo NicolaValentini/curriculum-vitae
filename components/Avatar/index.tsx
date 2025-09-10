@@ -13,7 +13,7 @@ export const AvatarBase: FC<Props> = ({ className = '' }) => (
     <Image
       fill
       alt='avatar'
-      src='/images/me2.jpg'
+      src='/images/avatar.jpg'
       className='object-cover rounded-full aspect-square'
     />
   </FitContainer>

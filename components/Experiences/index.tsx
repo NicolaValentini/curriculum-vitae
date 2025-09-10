@@ -18,7 +18,7 @@ export const Experiences: FC<Props> = ({ className }) => {
   return (
     <div
       className={clsx(
-        'grid auto-rows-[minmax(16vh,min-content)] md:grid-cols-2',
+        'grid auto-rows-[minmax(32vh,min-content)] md:auto-rows-[minmax(16vh,min-content)] md:grid-cols-2',
         className,
       )}
     >

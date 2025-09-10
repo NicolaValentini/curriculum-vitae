@@ -20,20 +20,18 @@ export const Trainings: FC<Props> = ({ className }) => {
   return (
     <div
       className={clsx(
-        'grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5',
+        'grid auto-rows-[minmax(16vh,min-content)] grid-cols-2 md:grid-cols-3',
         className,
       )}
     >
       {TRAININGS.map(training => (
-        <div
-          key={training}
-          className={clsx('min-h-[16vh] flex flex-col gap-3 md:gap-5')}
-        >
+        <div key={training} className={clsx('flex flex-col gap-3 md:gap-5')}>
           <Link.Entry
             hrefPath={`training.${training}.link`}
             path={`training.${training}.name`}
             spaced
-            className='text-base sm:text-lg xl:text-xl text-center'
+            font='text-paragraph'
+            className='text-center'
           />
 
           <Text.EntryParagraph

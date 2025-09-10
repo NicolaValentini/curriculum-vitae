@@ -31,12 +31,12 @@ type HrefPathProps = {
 type IconVariant = {
   Icon: IconType;
   path?: never;
-  isNavLink?: never;
+  font?: never;
 };
 type TextVariant = {
   Icon?: never;
   path: string;
-  isNavLink?: boolean;
+  font?: 'text-paragraph';
 } & Omit<TextProps, 'className'>;
 
 export type Props = BaseProps &
@@ -53,9 +53,9 @@ export const LinkBase: FC<Props> = ({
   path,
   button,
   download,
-  isNavLink,
   onClickAction,
   className = '',
+  font,
   contentClassName = '',
   ...textProps
 }) => {
@@ -83,7 +83,9 @@ export const LinkBase: FC<Props> = ({
       />
     );
   } else {
-    const Component = isNavLink ? Text : Text.Link;
+    let Component = Text.Small;
+    if (font === 'text-paragraph') Component = Text.Paragraph;
+
     content = (
       <Component
         path={path}

@@ -51,13 +51,12 @@ export const NavLinks: FC<Props> = ({ onClickAction }) => {
       {pages.map(({ label, href }) => (
         <li key={href} ref={el => setElementRef(el, href)}>
           <Link
-            isNavLink
             href={href}
             onClickAction={onClickAction}
             bold
             path={label}
             opaque={realPath !== href}
-            contentClassName='text-base md:text-base xl:text-base'
+            font='text-paragraph'
           />
         </li>
       ))}

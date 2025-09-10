@@ -50,11 +50,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./app/*"],
-      "@/public/*": ["./public/*"],
-      "@/components": ["./components/"],
+      "@/utils": ["./utils/"],
       "@/i18n/*": ["./i18n/*"],
       "@/context": ["./context/"],
-      "@/utils": ["./utils/"]
+      "@/components": ["./components/"]
     },
 
     // ======================================================================

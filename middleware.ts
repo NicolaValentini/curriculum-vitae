@@ -29,13 +29,9 @@ export function middleware(request: NextRequest) {
   if (
     [
       '/files/cv-valentini-nicola.pdf',
-      '/images/city.jpg',
-      '/images/city2.jpg',
-      '/images/city3.jpg',
       '/images/me.jpg',
-      '/images/me2.jpg',
-      '/images/me3.jpg',
-      '/images/me5-4.jpg',
+      '/images/avatar.jpg',
+      '/images/next-template.png',
     ].includes(pathname)
   ) {
     return;

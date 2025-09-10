@@ -2,7 +2,7 @@ import { withEntryAnimation } from '@/components';
 
 import { TextBase, TextBaseProps } from './Text';
 import { TextList, TextListProps } from './TextList';
-import { TextLink, TextParagraph, TextTitle } from './TextFonts';
+import { TextSmall, TextParagraph, TextTitle } from './TextFonts';
 
 export type TextProps = TextBaseProps;
 
@@ -14,6 +14,6 @@ export const Text = Object.assign(TextBase, {
   EntryParagraph: withEntryAnimation<TextProps>(TextParagraph),
   Title: TextTitle,
   EntryTitle: withEntryAnimation<TextProps>(TextTitle),
-  Link: TextLink,
-  EntryLink: withEntryAnimation<TextProps>(TextLink),
+  Small: TextSmall,
+  EntrySmall: withEntryAnimation<TextProps>(TextSmall),
 });

@@ -17,7 +17,7 @@ export const TextTitle: FC<TextProps> = ({ className, ...rest }) => (
   />
 );
 
-export const TextLink: FC<TextProps> = ({ className, ...rest }) => (
+export const TextSmall: FC<TextProps> = ({ className, ...rest }) => (
   <Text
     className={clsx('text-xs md:text-sm xl:text-base', className)}
     {...rest}

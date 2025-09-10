@@ -24,7 +24,8 @@ export const Education: FC<Props> = ({ className }) => {
         spaced
         secondary
         entry='right'
-        className='text-base sm:text-lg xl:text-xl text-right'
+        font='text-paragraph'
+        className='text-right'
       />
 
       <Text.EntryParagraph
