@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { clsx } from 'clsx';
 
-import { Link, Text } from '@/components';
+import { Layout, Link, Text } from '@/components';
 
 const TRAININGS = [
   'regional',
@@ -25,7 +25,7 @@ export const Trainings: FC<Props> = ({ className }) => {
       )}
     >
       {TRAININGS.map(training => (
-        <div key={training} className={clsx('flex flex-col gap-3 md:gap-5')}>
+        <Layout.List key={training}>
           <Link.Entry
             hrefPath={`training.${training}.link`}
             path={`training.${training}.name`}
@@ -41,7 +41,7 @@ export const Trainings: FC<Props> = ({ className }) => {
             secondary
             className='text-center'
           />
-        </div>
+        </Layout.List>
       ))}
     </div>
   );

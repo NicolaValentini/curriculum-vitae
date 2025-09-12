@@ -1,7 +1,7 @@
 import { FC, Fragment } from 'react';
 import { clsx } from 'clsx';
 
-import { Text } from '@/components';
+import { Layout, Text } from '@/components';
 
 const EXPERIENCES = [
   'nttData2024',
@@ -36,8 +36,8 @@ export const Experiences: FC<Props> = ({ className }) => {
               />
             )}
 
-            <div
-              className={clsx('relative flex flex-col gap-3 md:gap-5', {
+            <Layout.List
+              className={clsx('relative', {
                 'pb-6': !isLast,
                 'md:pl-6': positionRight,
                 'md:pr-6': !positionRight,
@@ -49,28 +49,24 @@ export const Experiences: FC<Props> = ({ className }) => {
                 path={`experience.${experience}.date`}
                 spaced
                 secondary
-                entry={positionRight ? 'right' : 'left'}
               />
 
               <Text.EntryParagraph
                 path={`experience.${experience}.company`}
                 opaque
                 spaced
-                entry={positionRight ? 'right' : 'left'}
               />
 
               <Text.EntryParagraph
                 path={`experience.${experience}.role`}
                 spaced
                 semibold
-                entry={positionRight ? 'right' : 'left'}
               />
 
               <Text.EntryParagraph
                 path={`experience.${experience}.description`}
                 opaque
                 spaced
-                entry={positionRight ? 'right' : 'left'}
               />
 
               <div
@@ -82,7 +78,7 @@ export const Experiences: FC<Props> = ({ className }) => {
                   },
                 )}
               />
-            </div>
+            </Layout.List>
 
             {!positionRight && <div className='hidden md:block' />}
           </Fragment>

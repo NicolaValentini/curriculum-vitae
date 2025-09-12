@@ -1,5 +1,4 @@
 export * from './Animations';
-export * from './Avatar';
 export * from './Burger';
 export * from './Contacts';
 export * from './DownloadResume';
@@ -9,6 +8,8 @@ export * from './FitContainer';
 export * from './Footer';
 export * from './FooterLinks';
 export * from './Header';
+export * from './Image';
+export * from './Layout';
 export * from './Link';
 export * from './LocaleSwitcher';
 export * from './NavLinks';

@@ -1,6 +1,7 @@
 import { FC } from 'react';
+import { clsx } from 'clsx';
 
-import { Text, TextProps } from '@/components';
+import { Layout, Text, TextProps } from '@/components';
 
 export type TextListProps = Omit<TextProps, 'path' | 'className'> & {
   paths: string[];
@@ -10,18 +11,18 @@ export type TextListProps = Omit<TextProps, 'path' | 'className'> & {
 
 export const TextList: FC<TextListProps> = ({
   paths,
-  className = 'flex flex-col gap-3 md:gap-5 m-auto',
-  textClassName = 'text-center',
+  className,
+  textClassName,
   ...rest
 }) => (
-  <div className={className}>
+  <Layout.List className={clsx('m-auto', className)}>
     {paths.map(path => (
       <Text.Paragraph
         key={path}
         path={path}
-        className={textClassName}
+        className={clsx('text-center', textClassName)}
         {...rest}
       />
     ))}
-  </div>
+  </Layout.List>
 );

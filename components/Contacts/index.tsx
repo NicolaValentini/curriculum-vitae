@@ -16,7 +16,7 @@ const CONTACTS: Contact[] = [
 type Props = { className?: string };
 
 export const Contacts: FC<Props> = ({ className }) => {
-  const cellClassName = 'p-2.5 md:p-4';
+  const tdClasses = 'p-2.5 md:p-4';
 
   return (
     <table className={clsx('w-full', className)}>
@@ -32,16 +32,16 @@ export const Contacts: FC<Props> = ({ className }) => {
                 opaque
                 spaced
                 semibold
-                className={cellClassName}
+                className={tdClasses}
               />
             </td>
-            <td className='text-right'>
+            <td>
               <Text.EntryParagraph
                 path={contact.value}
                 opaque
                 spaced
                 entry='right'
-                className={cellClassName}
+                className={clsx('text-right', tdClasses)}
               />
             </td>
           </tr>

@@ -1,4 +1,4 @@
-import { Avatar, Link, Text } from '@/components';
+import { Image, Layout, Link, Text } from '@/components';
 
 const WHO_I_AM_PATHS = ['whoIAm.1', 'whoIAm.2', 'whoIAm.3', 'whoIAm.4'];
 const MY_HISTORY_PATHS = [
@@ -11,54 +11,50 @@ const MY_HISTORY_PATHS = [
 
 export default function WhoIAmPage() {
   return (
-    <main>
-      <section className='min-h-[64vh] overflow-hidden px-8 sm:px-16 lg:px-0'>
-        <div className='w-full h-full grid grid-rows-[minmax(16vh,min-content)_minmax(16vh,min-content)_minmax(32vh,min-content)] lg:grid-cols-[1fr_2fr_2fr_1fr]'>
-          <Text.EntryTitle
-            path='titles.whoIAm'
+    <Layout.Main>
+      <Layout.Section>
+        <Text.EntryTitle
+          spaced
+          semibold
+          path='titles.whoIAm'
+          animationClassName='min-h-[16vh]'
+        />
+
+        <Text.EntryList paths={WHO_I_AM_PATHS} opaque spaced />
+      </Layout.Section>
+
+      <Layout.Section className='justify-items-center'>
+        <Image alt='avatar.jpg' imageClassName='rounded-full' />
+      </Layout.Section>
+
+      <Layout.Section>
+        <Text.EntryTitle
+          spaced
+          semibold
+          entry='right'
+          className='text-end'
+          path='titles.myHistory'
+          animationClassName='min-h-[16vh]'
+        />
+
+        <Layout.List>
+          <Text.EntryList
+            opaque
             spaced
-            semibold
             entry='right'
-            animationClassName='row-start-2 lg:col-start-3 m-[0_auto]'
+            paths={MY_HISTORY_PATHS}
           />
 
-          <Avatar.Entry animationClassName='row-start-4 lg:row-start-2 lg:row-span-2 lg:col-start-2 min-h-[32vh] mt-[16vh] lg:mt-0 lg:pr-2' />
-
-          <div className='row-start-3 lg:col-start-3 lg:pl-2'>
-            <Text.EntryList
-              paths={WHO_I_AM_PATHS}
-              opaque
-              spaced
-              entry='right'
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className='min-h-[64vh] overflow-hidden px-8 sm:px-16 lg:px-0'>
-        <div className='w-full h-full grid grid-rows-[minmax(16vh,min-content)_minmax(16vh,min-content)_minmax(32vh,min-content)] lg:grid-cols-[1fr_2fr_1fr]'>
-          <Text.EntryTitle
-            path='titles.myHistory'
-            spaced
-            semibold
-            animationClassName='row-start-2 lg:col-start-2 m-[0_auto]'
+          <Link.Entry
+            bold
+            button
+            entry='right'
+            href='/resume'
+            path='titles.resume'
+            animationClassName='self-center'
           />
-
-          <div className='row-start-3 lg:col-start-2'>
-            <div className='flex flex-col gap-3 md:gap-5'>
-              <Text.EntryList paths={MY_HISTORY_PATHS} opaque spaced />
-
-              <Link.Entry
-                button
-                href='/resume'
-                bold
-                path='titles.resume'
-                animationClassName='self-center'
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+        </Layout.List>
+      </Layout.Section>
+    </Layout.Main>
   );
 }

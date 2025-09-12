@@ -48,7 +48,7 @@ export const Skills: FC<Props> = ({ className }) => {
   return (
     <div
       className={clsx(
-        'grid grid-cols-1 md:grid-cols-3 auto-rows-[minmax(16vh,min-content)] justify-items-center gap-3 md:gap-5',
+        'grid auto-rows-[minmax(16vh,min-content)] grid-cols-1 md:grid-cols-3 justify-items-center gap-3 md:gap-5',
         className,
       )}
     >

@@ -1,15 +1,13 @@
 import { FC } from 'react';
 import { clsx } from 'clsx';
 
-import { Link, Text } from '@/components';
+import { Layout, Link, Text } from '@/components';
 
 type Props = { className?: string };
 
 export const Education: FC<Props> = ({ className }) => {
   return (
-    <div
-      className={clsx('min-h-[16vh] flex flex-col gap-3 md:gap-5', className)}
-    >
+    <Layout.List className={clsx('min-h-[16vh]', className)}>
       <Text.EntryParagraph
         path='education.highSchool.date'
         opaque
@@ -35,6 +33,6 @@ export const Education: FC<Props> = ({ className }) => {
         entry='right'
         className='text-right'
       />
-    </div>
+    </Layout.List>
   );
 };

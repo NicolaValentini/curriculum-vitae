@@ -1,11 +1,11 @@
-import { Contacts, DownloadResume, Link, Text } from '@/components';
+import { Contacts, DownloadResume, Layout, Link, Text } from '@/components';
 
 const ABOUT_ME_PATHS = ['aboutMe.1', 'aboutMe.2', 'aboutMe.3', 'aboutMe.4'];
 
 export default function Home() {
   return (
-    <main>
-      <section className='h-screen overflow-hidden'>
+    <>
+      <div className='h-screen overflow-hidden'>
         <div className='w-full h-full grid md:grid-cols-[2fr_1fr] lg:grid-cols-2'>
           <div className='row-start-1 col-start-1 md:col-end-3 h-7/10 md:h-full w-full md:w-7/10 md:justify-self-end'>
             <div className="w-full h-full bg-[url('/images/me.jpg')] bg-cover bg-center animate-cross-border-bottom md:animate-cross-border-left" />
@@ -33,53 +33,42 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className='min-h-[64vh] overflow-hidden px-8 sm:px-16 md:px-0'>
-        <div className='w-full h-full grid grid-rows-[minmax(16vh,min-content)_minmax(16vh,min-content)_minmax(32vh,min-content)] md:grid-cols-[1fr_2fr_2fr_1fr]'>
+      <Layout.Main>
+        <Layout.Section>
           <Text.EntryTitle
             path='titles.aboutMe'
             spaced
             semibold
-            animationClassName='row-start-2 md:col-start-2 m-[0_auto]'
+            animationClassName='min-h-[16vh]'
           />
 
-          <div className='row-start-3 md:col-start-3'>
-            <div className='flex flex-col gap-3 md:gap-5 m-auto'>
-              <Text.EntryList
-                paths={ABOUT_ME_PATHS}
-                opaque
-                spaced
-                entry='right'
-              />
+          <Layout.List className='lg:w-1/2 justify-self-end'>
+            <Text.EntryList paths={ABOUT_ME_PATHS} opaque spaced />
 
-              <Link.Entry
-                button
-                href='/who-i-am'
-                bold
-                path='titles.aboutMe'
-                entry='right'
-                animationClassName='self-center'
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+            <Link.Entry
+              button
+              href='/who-i-am'
+              bold
+              path='titles.aboutMe'
+              animationClassName='self-center'
+            />
+          </Layout.List>
+        </Layout.Section>
 
-      <section className='min-h-[64vh] overflow-hidden px-8 sm:px-16 md:px-0'>
-        <div className='w-full h-full grid grid-rows-[minmax(16vh,min-content)_minmax(16vh,min-content)_minmax(32vh,min-content)] md:grid-cols-[1fr_2fr_1fr]'>
+        <Layout.Section>
           <Text.EntryTitle
             path='titles.contacts'
             spaced
             semibold
-            animationClassName='row-start-2 md:col-start-2 m-[0_auto]'
+            className='text-center'
+            animationClassName='min-h-[16vh]'
           />
 
-          <div className='row-start-3 md:col-start-2'>
-            <Contacts />
-          </div>
-        </div>
-      </section>
-    </main>
+          <Contacts />
+        </Layout.Section>
+      </Layout.Main>
+    </>
   );
 }
