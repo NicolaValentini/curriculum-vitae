@@ -45,12 +45,18 @@ export default function Home() {
           />
 
           <Layout.List className='lg:w-1/2 justify-self-end'>
-            <Text.EntryList paths={ABOUT_ME_PATHS} opaque spaced />
+            <Text.EntryList
+              opaque
+              spaced
+              entry='right'
+              paths={ABOUT_ME_PATHS}
+            />
 
             <Link.Entry
               button
-              href='/who-i-am'
               bold
+              entry='right'
+              href='/who-i-am'
               path='titles.aboutMe'
               animationClassName='self-center'
             />

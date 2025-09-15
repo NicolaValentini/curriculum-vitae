@@ -12,7 +12,7 @@ export type TextBaseProps = {
   opaque?: boolean;
   spaced?: boolean;
   secondary?: boolean;
-  className?: string;
+  className?: string | undefined;
 };
 
 export const TextBase: FC<TextBaseProps> = ({
@@ -22,7 +22,7 @@ export const TextBase: FC<TextBaseProps> = ({
   opaque,
   spaced,
   secondary,
-  className: classNameProps = '',
+  className: classNameProps,
 }) => {
   const { dictionary } = use(I18nContext);
 

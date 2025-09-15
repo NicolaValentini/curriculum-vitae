@@ -126,6 +126,16 @@
     "calendar": "Organizzato / Preciso / Puntuale",
     "team": "Collaborativo / Comunicazione Efficace"
   },
+  "projects": {
+    "nextTemplate": {
+      "name": "Next Template",
+      "description": "Un template leggero per Next.js 15 con TypeScript, dotato di una configurazione preimpostata con ESLint, Prettier e Husky per garantire codice pulito e coerente"
+    },
+    "curriculumVitae": {
+      "name": "Curriculum Vitae",
+      "description": "Il mio curriculum vitae personale realizzato con Next.js 15, partendo dal mio template. Include Tailwind CSS, animazioni con Motion e supporta più lingue (italiano e inglese)"
+    }
+  },
   "contacts": {
     "name": "Nome",
     "email": "Email",

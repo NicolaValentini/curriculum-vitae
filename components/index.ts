@@ -13,6 +13,7 @@ export * from './Layout';
 export * from './Link';
 export * from './LocaleSwitcher';
 export * from './NavLinks';
+export * from './Projects';
 export * from './Providers';
 export * from './Skills';
 export * from './Text';

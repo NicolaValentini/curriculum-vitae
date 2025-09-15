@@ -2,7 +2,6 @@
 
 import { FC, useEffect, useRef, useState } from 'react';
 
-import { FaFacebook } from 'react-icons/fa6';
 import { motion, useInView } from 'motion/react';
 
 import {
@@ -78,9 +77,7 @@ export const Header: FC = () => {
       >
         <div className='h-full grid grid-cols-1 md:grid-cols-[1fr_4fr]'>
           <div className='row-start-1 col-start-1'>
-            <div className='flex justify-between md:self-center'>
-              <FaFacebook className='cursor-pointer' />
-
+            <div className='flex justify-end md:self-center'>
               <Burger
                 ref={burgerRef}
                 isOpen={isOpenBurger}

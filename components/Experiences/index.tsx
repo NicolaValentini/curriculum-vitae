@@ -49,24 +49,28 @@ export const Experiences: FC<Props> = ({ className }) => {
                 path={`experience.${experience}.date`}
                 spaced
                 secondary
+                entry={positionRight ? 'right' : 'left'}
               />
 
               <Text.EntryParagraph
                 path={`experience.${experience}.company`}
                 opaque
                 spaced
+                entry={positionRight ? 'right' : 'left'}
               />
 
               <Text.EntryParagraph
                 path={`experience.${experience}.role`}
                 spaced
                 semibold
+                entry={positionRight ? 'right' : 'left'}
               />
 
               <Text.EntryParagraph
                 path={`experience.${experience}.description`}
                 opaque
                 spaced
+                entry={positionRight ? 'right' : 'left'}
               />
 
               <div

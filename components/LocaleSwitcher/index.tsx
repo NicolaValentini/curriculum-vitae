@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, use, useState } from 'react';
+import { clsx } from 'clsx';
 import { motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
 
@@ -12,10 +13,7 @@ type Props = {
   onClickAction?: () => void;
 };
 
-export const LocaleSwitcher: FC<Props> = ({
-  className = '',
-  onClickAction,
-}) => {
+export const LocaleSwitcher: FC<Props> = ({ className, onClickAction }) => {
   const path = usePathname();
   const { locale, setI18n } = use(I18nContext);
 
@@ -45,7 +43,7 @@ export const LocaleSwitcher: FC<Props> = ({
   const animateNotSelected = { x: 0, opacity: 1 };
 
   return (
-    <button onClick={handleLocaleChange} className={`${className} grid`}>
+    <button onClick={handleLocaleChange} className={clsx('grid', className)}>
       <motion.p
         initial={initialSelected}
         animate={animate ? animateSelected : initialSelected}

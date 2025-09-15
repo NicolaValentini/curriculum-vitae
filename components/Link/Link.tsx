@@ -54,9 +54,9 @@ export const LinkBase: FC<Props> = ({
   button,
   download,
   onClickAction,
-  className = '',
+  className,
   font,
-  contentClassName = '',
+  contentClassName,
   ...textProps
 }) => {
   const { dictionary } = use(I18nContext);
