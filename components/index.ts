@@ -4,7 +4,6 @@ export * from './Contacts';
 export * from './DownloadResume';
 export * from './Education';
 export * from './Experiences';
-export * from './FitContainer';
 export * from './Footer';
 export * from './FooterLinks';
 export * from './Header';
