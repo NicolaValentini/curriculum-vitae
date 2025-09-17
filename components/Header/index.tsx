@@ -87,7 +87,6 @@ export const Header: FC = () => {
           </div>
 
           <AppearanceAnimation
-            display='grid'
             show={showLinks}
             className='row-start-1 col-start-1 md:col-start-2'
           >

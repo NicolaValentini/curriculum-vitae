@@ -3,52 +3,35 @@
 import { FC, ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 
-const initial = {
-  opacity: 0,
-  display: 'none',
-  transition: {
-    opacity: { duration: 0.3, delay: 0 },
-    display: { duration: 0, delay: 0.3 },
-  },
-};
-
 export type AppearanceAnimationProps = {
   as?: 'div' | undefined;
   show?: boolean | undefined;
   delay?: number | undefined;
-  display?: string | undefined;
   className?: string | undefined;
-  children?: ReactNode;
+  children: ReactNode;
 };
 
 export const AppearanceAnimation: FC<AppearanceAnimationProps> = ({
   as = 'div',
-  delay = 0,
-  className = '',
   show = false,
-  display = 'block',
+  delay = 0,
+  className,
   children,
 }) => {
-  const Motion = motion[as];
+  const MotionComponent = motion[as];
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode='wait'>
       {show && (
-        <Motion
+        <MotionComponent
           className={className}
-          initial={initial}
-          animate={{
-            opacity: 1,
-            display,
-            transition: {
-              opacity: { duration: 0.3, delay: delay + 0.2 },
-              display: { duration: 0, delay },
-            },
-          }}
-          exit={initial}
+          transition={{ duration: 0.3, delay }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         >
           {children}
-        </Motion>
+        </MotionComponent>
       )}
     </AnimatePresence>
   );
