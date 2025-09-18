@@ -1,4 +1,5 @@
 import { ComponentType } from 'react';
+
 import { EntryAnimation, EntryAnimationProps } from '@/components';
 
 export * from './EntryAnimation';
@@ -12,18 +13,26 @@ export function withEntryAnimation<P extends object>(
   Component: ComponentType<P>,
 ) {
   const WithEntryAnimation = ({
-    animationClassName,
-    repeat,
+    blur,
+    ease,
+    exit,
     delay,
     entry,
-    exit,
+    repeat,
+    distance,
+    duration,
+    animationClassName,
     ...rest
   }: Props<P>) => (
     <EntryAnimation
-      repeat={repeat}
+      blur={blur}
+      ease={ease}
+      exit={exit}
       delay={delay}
       entry={entry}
-      exit={exit}
+      repeat={repeat}
+      distance={distance}
+      duration={duration}
       className={animationClassName}
     >
       <Component {...(rest as P)} />
