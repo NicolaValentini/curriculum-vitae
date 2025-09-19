@@ -3,7 +3,7 @@
 import { FC, ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 
-export type AppearanceAnimationProps = {
+type Props = {
   as?: 'div' | undefined;
   show?: boolean | undefined;
   delay?: number | undefined;
@@ -11,7 +11,7 @@ export type AppearanceAnimationProps = {
   children: ReactNode;
 };
 
-export const AppearanceAnimation: FC<AppearanceAnimationProps> = ({
+export const AppearanceAnimation: FC<Props> = ({
   as = 'div',
   show = false,
   delay = 0,
@@ -25,7 +25,7 @@ export const AppearanceAnimation: FC<AppearanceAnimationProps> = ({
       {show && (
         <MotionComponent
           className={className}
-          transition={{ duration: 0.3, delay }}
+          transition={{ delay }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

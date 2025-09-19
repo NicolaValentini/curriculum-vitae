@@ -1,3 +1,3 @@
 export * from './AppearanceAnimation';
 export * from './EntryAnimation';
-export * from './MovingElement';
+export * from './MovingAnimation';

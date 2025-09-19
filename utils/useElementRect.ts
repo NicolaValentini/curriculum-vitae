@@ -25,11 +25,13 @@ export function useElementRect<T extends HTMLElement | SVGElement>() {
   }, []);
 
   const ref = useCallback(
-    (el: T | null, _key?: string) => {
-      nodeRef.current = el;
-      setKey(_key?.trim()?.length ? _key : null);
+    (el: T | null, _key: string | null = null) => {
+      if (el !== nodeRef.current) {
+        nodeRef.current = el;
+        setKey(prev => (prev === _key ? prev : _key));
 
-      if (el) updateRect();
+        updateRect();
+      }
     },
     [updateRect],
   );

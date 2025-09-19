@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 import { I18nContext } from '@/context';
 import { useElementRect } from '@/utils';
-import { Link, MovingElement } from '@/components';
+import { Link, MovingAnimation } from '@/components';
 
 const pages = [
   { label: 'titles.home', href: '/' },
@@ -34,7 +34,7 @@ export const NavLinks: FC<Props> = ({ onClickAction }) => {
   const realPath = path.slice(3)?.length > 0 ? path.slice(3) : '/';
 
   const setElementRef = (el: HTMLLIElement | null, href: string) => {
-    if (realPath === href) {
+    if (realPath === href && el) {
       elementRef(el);
     }
   };
@@ -61,11 +61,11 @@ export const NavLinks: FC<Props> = ({ onClickAction }) => {
         </li>
       ))}
 
-      <MovingElement
+      <MovingAnimation
         widthAsElement
         elementRect={elementRect}
         containerRect={containerRect}
-        className='hidden md:block absolute bottom-0 h-0.5 bg-(--text-primary) rounded'
+        className='hidden md:block bottom-0 h-0.5 bg-(--text-primary) rounded'
       />
     </ul>
   );

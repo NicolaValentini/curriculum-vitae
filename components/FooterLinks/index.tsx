@@ -11,7 +11,7 @@ import {
 } from 'react-icons/fa6';
 
 import { useElementRect } from '@/utils';
-import { AppearanceAnimation, Link, MovingElement, Text } from '@/components';
+import { AppearanceAnimation, Link, MovingAnimation, Text } from '@/components';
 
 const links = [
   {
@@ -82,14 +82,14 @@ export const FooterLinks: FC = () => {
         ))}
 
         <AppearanceAnimation show={!!(path && elementRect)} delay={0.1}>
-          <MovingElement
+          <MovingAnimation
             centered
             elementRect={elementRect}
             containerRect={containerRect}
-            className='absolute -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 rounded-md bg-gray-800 text-white text-sm shadow-lg whitespace-nowrap z-10'
+            className='-translate-x-1/2 bottom-full mb-2 px-3 py-1.5 rounded-md bg-gray-800 text-white text-sm shadow-lg whitespace-nowrap z-10'
           >
             {path && <Text path={path} />}
-          </MovingElement>
+          </MovingAnimation>
         </AppearanceAnimation>
       </div>
     </div>
