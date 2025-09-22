@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, MouseEvent } from 'react';
 import { clsx } from 'clsx';
 import {
   FaCalendarDays,
@@ -14,7 +14,8 @@ import {
   FaRuler,
 } from 'react-icons/fa6';
 
-import { AppearanceAnimation, EntryAnimation, Text } from '@/components';
+import { useElementRect } from '@/utils';
+import { EntryAnimation, Tooltip } from '@/components';
 
 const SKILLS = [
   { path: 'skill.html', Icon: FaHtml5 },
@@ -33,22 +34,33 @@ let timeout: NodeJS.Timeout | null = null;
 type Props = { className?: string };
 
 export const Skills: FC<Props> = ({ className }) => {
-  const [renderPath, setPath] = useState<string>('');
+  const { ref: containerRef, rect: containerRect } =
+    useElementRect<HTMLDivElement>();
+  const {
+    key: _path,
+    ref: elementRef,
+    rect: elementRect,
+  } = useElementRect<SVGElement>();
 
-  const handleClick = (path: string) => {
+  const handleClick = (
+    e: MouseEvent<SVGElement, globalThis.MouseEvent>,
+    key: string,
+  ) => {
     if (timeout) {
       clearTimeout(timeout);
     }
 
-    setPath(path);
+    elementRef(e.currentTarget, key);
 
-    timeout = setTimeout(() => setPath(''), 5000);
+    timeout = setTimeout(() => elementRef(null), 5000);
   };
 
   return (
     <div
+      ref={containerRef}
+      onMouseLeave={() => !timeout && elementRef(null)}
       className={clsx(
-        'grid auto-rows-[minmax(16vh,min-content)] grid-cols-1 md:grid-cols-3 justify-items-center gap-3 md:gap-5',
+        'relative grid auto-rows-[minmax(16vh,min-content)] grid-cols-1 md:grid-cols-3 justify-items-center gap-3 md:gap-5',
         className,
       )}
     >
@@ -57,19 +69,20 @@ export const Skills: FC<Props> = ({ className }) => {
           <Icon
             size='auto'
             className='h-10 md:h-15 lg:h-20'
-            onMouseLeave={() => setPath('')}
-            onMouseEnter={() => setPath(path)}
-            onClick={() => handleClick(path)}
+            onClick={e => handleClick(e, path)}
+            onMouseEnter={e => elementRef(e.currentTarget, path)}
           />
-
-          <AppearanceAnimation
-            show={renderPath === path}
-            className='absolute left-1/2 -translate-x-1/2 mt-2 px-3 py-1.5 rounded-md bg-gray-800 text-white text-sm shadow-lg whitespace-nowrap z-10'
-          >
-            <Text path={path} />
-          </AppearanceAnimation>
         </EntryAnimation>
       ))}
+
+      {_path && (
+        <Tooltip
+          path={_path}
+          place='bottom'
+          elementRect={elementRect}
+          containerRect={containerRect}
+        />
+      )}
     </div>
   );
 };

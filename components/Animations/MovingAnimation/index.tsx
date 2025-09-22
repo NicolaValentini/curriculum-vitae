@@ -7,7 +7,7 @@ import { motion } from 'motion/react';
 type Place = 'top' | 'bottom';
 type Animate = { left?: number; top?: number; width?: number };
 
-type Props = {
+export type MovingAnimationProps = {
   place?: Place;
   centered?: boolean;
   widthAsElement?: boolean;
@@ -17,7 +17,7 @@ type Props = {
   children?: ReactNode;
 };
 
-export const MovingAnimation: FC<Props> = ({
+export const MovingAnimation: FC<MovingAnimationProps> = ({
   className,
   elementRect,
   place = 'top',
@@ -69,7 +69,11 @@ export const MovingAnimation: FC<Props> = ({
 
   return (
     <motion.div
-      className={clsx('absolute', className)}
+      className={clsx(
+        'absolute',
+        className,
+        place === 'top' && '-translate-y-full',
+      )}
       initial={initial}
       animate={animate}
     >
@@ -80,7 +84,7 @@ export const MovingAnimation: FC<Props> = ({
 
 type Args = { prev: Animate } & Partial<
   Pick<
-    Props,
+    MovingAnimationProps,
     'place' | 'centered' | 'elementRect' | 'containerRect' | 'widthAsElement'
   >
 >;

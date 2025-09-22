@@ -16,4 +16,5 @@ export * from './Projects';
 export * from './Providers';
 export * from './Skills';
 export * from './Text';
+export * from './Tooltip';
 export * from './Trainings';

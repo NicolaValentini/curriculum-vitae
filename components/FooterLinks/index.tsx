@@ -11,29 +11,29 @@ import {
 } from 'react-icons/fa6';
 
 import { useElementRect } from '@/utils';
-import { AppearanceAnimation, Link, MovingAnimation, Text } from '@/components';
+import { Link, Tooltip } from '@/components';
 
 const links = [
   {
-    key: 'links.linkedin',
+    path: 'links.linkedin',
     Icon: FaLinkedin,
     href: 'https://www.linkedin.com/in/nicola-valentini',
   },
   {
-    key: 'links.github',
+    path: 'links.github',
     Icon: FaGithub,
     href: 'https://github.com/NicolaValentini',
   },
   {
-    key: 'links.email',
+    path: 'links.email',
     Icon: FaEnvelope,
   },
   {
-    key: 'links.phone',
+    path: 'links.phone',
     Icon: FaWhatsapp,
   },
   {
-    key: 'links.address',
+    path: 'links.address',
     Icon: FaLocationDot,
   },
 ];
@@ -44,7 +44,7 @@ export const FooterLinks: FC = () => {
   const { ref: containerRef, rect: containerRect } =
     useElementRect<HTMLDivElement>();
   const {
-    key: path,
+    key: _path,
     ref: elementRef,
     rect: elementRect,
   } = useElementRect<HTMLParagraphElement>();
@@ -70,27 +70,24 @@ export const FooterLinks: FC = () => {
         className='relative flex items-center justify-center mt-4 md:mt-0 md:ml-4'
         onMouseLeave={() => !timeout && elementRef(null)}
       >
-        {links.map(({ key, Icon, href }, index) => (
+        {links.map(({ path, Icon, href }, index) => (
           <p
-            key={key}
+            key={path}
             className={clsx(index && 'ml-4')}
-            onClick={e => !href && handleClick(e, key)}
-            onMouseEnter={e => elementRef(e.currentTarget, key)}
+            onClick={e => !href && handleClick(e, path)}
+            onMouseEnter={e => elementRef(e.currentTarget, path)}
           >
             {href ? <Link href={href} Icon={Icon} /> : <Icon />}
           </p>
         ))}
 
-        <AppearanceAnimation show={!!(path && elementRect)} delay={0.1}>
-          <MovingAnimation
-            centered
+        {_path && (
+          <Tooltip
+            path={_path}
             elementRect={elementRect}
             containerRect={containerRect}
-            className='-translate-x-1/2 bottom-full mb-2 px-3 py-1.5 rounded-md bg-gray-800 text-white text-sm shadow-lg whitespace-nowrap z-10'
-          >
-            {path && <Text path={path} />}
-          </MovingAnimation>
-        </AppearanceAnimation>
+          />
+        )}
       </div>
     </div>
   );
