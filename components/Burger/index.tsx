@@ -3,7 +3,7 @@
 import { FC, RefObject } from 'react';
 import { motion } from 'motion/react';
 
-const burger = 'w-full h-[0.2rem] bg-(--text-primary) rounded';
+const burger = 'w-full h-[0.2rem] bg-(--primary) rounded';
 
 type Props = {
   isOpen: boolean;

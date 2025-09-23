@@ -32,7 +32,7 @@ export const TextBase: FC<TextBaseProps> = ({
   if (semibold) className += ' font-semibold';
   if (opaque) className += ' opacity-85';
   if (spaced) className += ' tracking-wide';
-  if (secondary) className += ' text-(--text-secondary)';
+  if (secondary) className += ' text-(--secondary)';
 
   return <p className={className}>{get(dictionary, path, '')}</p>;
 };

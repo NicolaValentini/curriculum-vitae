@@ -67,7 +67,7 @@ export const LinkBase: FC<Props> = ({
   const wrapperClassName = clsx(
     className,
     button &&
-      'block w-fit bg-(--text-secondary)/80 px-6 py-3 rounded-lg tracking-widest',
+      'block w-fit bg-(--secondary)/80 px-6 py-3 rounded-lg tracking-widest',
   );
 
   let content;

@@ -65,7 +65,7 @@ export const NavLinks: FC<Props> = ({ onClickAction }) => {
         widthAsElement
         elementRect={elementRect}
         containerRect={containerRect}
-        className='hidden md:block bottom-0 h-0.5 bg-(--text-primary) rounded'
+        className='hidden md:block bottom-0 h-0.5 bg-(--primary) rounded'
       />
     </ul>
   );

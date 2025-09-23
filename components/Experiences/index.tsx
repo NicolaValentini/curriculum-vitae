@@ -13,7 +13,7 @@ const EXPERIENCES = [
 type Props = { className?: string };
 
 export const Experiences: FC<Props> = ({ className }) => {
-  const borderClassName = 'md:border-r md:border-(--text-secondary)/80';
+  const borderClassName = 'md:border-r md:border-(--secondary)/80';
 
   return (
     <div
@@ -75,7 +75,7 @@ export const Experiences: FC<Props> = ({ className }) => {
 
               <div
                 className={clsx(
-                  'hidden md:block w-4 h-4 bg-(--text-secondary) rounded-full absolute top-0',
+                  'hidden md:block w-4 h-4 bg-(--secondary) rounded-full absolute top-0',
                   {
                     'left-[-0.5rem]': positionRight,
                     'right-[-0.5rem]': !positionRight,

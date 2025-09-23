@@ -24,7 +24,7 @@ export const Contacts: FC<Props> = ({ className }) => {
         {CONTACTS.map((contact, index) => (
           <tr
             key={contact.label}
-            className={clsx({ 'border-t border-gray-300': index !== 0 })}
+            className={clsx({ 'border-t border-(--primary)': index !== 0 })}
           >
             <td>
               <Text.EntryParagraph
