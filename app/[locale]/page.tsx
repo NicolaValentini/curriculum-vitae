@@ -8,7 +8,7 @@ export default function Home() {
       <div className='h-screen overflow-hidden'>
         <div className='w-full h-full grid md:grid-cols-[2fr_1fr] lg:grid-cols-2'>
           <div className='row-start-1 col-start-1 md:col-end-3 h-7/10 md:h-full w-full md:w-7/10 md:justify-self-end'>
-            <div className="w-full h-full bg-[url('/images/me.jpg')] bg-cover bg-center animate-cross-border-bottom md:animate-cross-border-left" />
+            <div className="w-full h-full bg-[url('/images/me.webp')] bg-cover bg-center animate-cross-border-bottom md:animate-cross-border-left" />
           </div>
 
           <div className='row-start-1 col-start-1 self-end h-2/5 md:h-full px-8 md:px-0'>

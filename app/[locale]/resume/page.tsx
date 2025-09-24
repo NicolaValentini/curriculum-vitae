@@ -73,9 +73,9 @@ export default function Resume() {
         />
 
         <div className='grid grid-cols-1 md:grid-cols-3 justify-items-center'>
-          <Image className={projectCardClasses} alt='next-template.png' />
+          <Image className={projectCardClasses} alt='next-template.webp' />
 
-          <Image className={projectCardClasses} alt='cv.jpg' />
+          <Image className={projectCardClasses} alt='cv.webp' />
 
           <Layout.List
             className={`${projectCardClasses} justify-center items-center`}

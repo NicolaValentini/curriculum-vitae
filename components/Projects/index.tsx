@@ -5,12 +5,12 @@ import { clsx } from 'clsx';
 
 const PROJECTS = [
   {
-    alt: 'next-template.png',
+    alt: 'next-template.webp',
     namePath: 'projects.nextTemplate.name',
     descriptionPath: 'projects.nextTemplate.description',
   },
   {
-    alt: 'cv.jpg',
+    alt: 'cv.webp',
     namePath: 'projects.curriculumVitae.name',
     descriptionPath: 'projects.curriculumVitae.description',
   },

@@ -29,10 +29,10 @@ export function middleware(request: NextRequest) {
   if (
     [
       '/files/cv-valentini-nicola.pdf',
-      '/images/cv.jpg',
-      '/images/me.jpg',
-      '/images/avatar.jpg',
-      '/images/next-template.png',
+      '/images/cv.webp',
+      '/images/me.webp',
+      '/images/avatar.webp',
+      '/images/next-template.webp',
     ].includes(pathname)
   ) {
     return;
