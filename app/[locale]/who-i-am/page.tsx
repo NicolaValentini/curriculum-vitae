@@ -24,7 +24,7 @@ export default function WhoIAmPage() {
       </Layout.Section>
 
       <Layout.Section className='justify-items-center'>
-        <Image alt='avatar.webp' imageClassName='rounded-full' />
+        <Image.Entry square alt='avatar.webp' className='rounded-full' />
       </Layout.Section>
 
       <Layout.Section>

@@ -2,31 +2,40 @@ import { FC } from 'react';
 import { clsx } from 'clsx';
 import NextImage from 'next/image';
 
-import { EntryAnimation, EntryAnimationProps } from '@/components';
+import { EntryAnimation, WithEntryAnimationProps } from '@/components';
+
+const squareClasses = 'w-full max-w-[32vh] h-full max-h-[32vh] aspect-square';
 
 type Props = {
   alt: string;
-  imageClassName?: string;
-} & Omit<EntryAnimationProps, 'children'>;
+  square?: boolean;
+  className?: string;
+};
 
-export const Image: FC<Props> = ({
+const ImageBase: FC<Props> = ({ alt, square, className }) => (
+  <NextImage
+    fill
+    alt={alt}
+    src={`/images/${alt}`}
+    className={clsx('object-cover', square && squareClasses, className)}
+  />
+);
+
+const EntryImage: FC<WithEntryAnimationProps<Props>> = ({
   alt,
+  square,
   className,
-  imageClassName,
+  animationClassName,
   ...rest
 }) => (
   <EntryAnimation
     {...rest}
-    className={clsx(
-      'w-full max-w-[32vh] max-h-[32vh] aspect-square',
-      className,
-    )}
+    className={clsx(square && squareClasses, animationClassName)}
   >
-    <NextImage
-      fill
-      alt={alt}
-      src={`/images/${alt}`}
-      className={clsx('object-cover', imageClassName)}
-    />
+    <ImageBase alt={alt} className={className ?? ''} />
   </EntryAnimation>
 );
+
+export const Image = Object.assign(ImageBase, {
+  Entry: EntryImage,
+});

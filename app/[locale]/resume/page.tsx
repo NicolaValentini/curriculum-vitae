@@ -10,9 +10,6 @@ import {
 } from '@/components';
 
 export default function Resume() {
-  const projectCardClasses =
-    'w-full max-w-[32vh] h-full max-h-[32vh] aspect-square';
-
   return (
     <Layout.Main>
       <Layout.Section>
@@ -73,13 +70,11 @@ export default function Resume() {
         />
 
         <div className='grid grid-cols-1 md:grid-cols-3 justify-items-center'>
-          <Image className={projectCardClasses} alt='next-template.webp' />
+          <Image.Entry square alt='next-template.webp' />
 
-          <Image className={projectCardClasses} alt='cv.webp' />
+          <Image.Entry square alt='cv.webp' />
 
-          <Layout.List
-            className={`${projectCardClasses} justify-center items-center`}
-          >
+          <Layout.List className='w-full max-w-[32vh] h-full max-h-[32vh] aspect-square justify-center items-center'>
             <Text.EntryParagraph path='continue' spaced opaque />
 
             <Link.Entry

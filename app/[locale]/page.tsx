@@ -1,37 +1,60 @@
-import { Contacts, DownloadResume, Layout, Link, Text } from '@/components';
+import { clsx } from 'clsx';
+
+import {
+  Contacts,
+  DownloadResume,
+  Image,
+  Layout,
+  Link,
+  Text,
+} from '@/components';
 
 const ABOUT_ME_PATHS = ['aboutMe.1', 'aboutMe.2', 'aboutMe.3', 'aboutMe.4'];
 
 export default function Home() {
   return (
     <>
-      <div className='h-screen overflow-hidden'>
-        <div className='w-full h-full grid md:grid-cols-[2fr_1fr] lg:grid-cols-2'>
-          <div className='row-start-1 col-start-1 md:col-end-3 h-7/10 md:h-full w-full md:w-7/10 md:justify-self-end'>
-            <div className="w-full h-full bg-[url('/images/me.webp')] bg-cover bg-center animate-cross-border-bottom md:animate-cross-border-left" />
-          </div>
+      <div className='min-h-screen overflow-hidden'>
+        <div
+          className={clsx(
+            'absolute top-0 md:right-0',
+            'h-7/10 w-full md:h-full md:w-7/10',
+            'animate-cross-border-bottom md:animate-cross-border-left',
+          )}
+        >
+          <Image alt='me.webp' />
+        </div>
 
-          <div className='row-start-1 col-start-1 self-end h-2/5 md:h-full px-8 md:px-0'>
-            <div className='w-fit h-full flex flex-col justify-center gap-3 md:gap-5 m-[0_auto]'>
-              <Text.Entry
-                path='nameSurname'
-                spaced
-                semibold
-                className='text-3xl sm:text-4xl xl:text-5xl'
-              />
+        <div
+          className={clsx(
+            'absolute bottom-0 px-8',
+            'h-2/5 md:h-full md:w-2/3 lg:w-1/2',
+          )}
+        >
+          <Layout.List
+            className={clsx(
+              'w-fit h-full',
+              'justify-center justify-self-center-safe',
+            )}
+          >
+            <Text.Entry
+              path='nameSurname'
+              spaced
+              semibold
+              className='text-3xl sm:text-4xl xl:text-5xl'
+            />
 
-              <Text.EntryTitle path='hero.job' spaced semibold secondary />
+            <Text.EntryTitle path='hero.job' spaced semibold secondary />
 
-              <Text.EntryParagraph
-                path='hero.slogan'
-                opaque
-                spaced
-                className='w-fit'
-              />
+            <Text.EntryParagraph
+              path='hero.slogan'
+              opaque
+              spaced
+              className='w-fit'
+            />
 
-              <DownloadResume.Entry />
-            </div>
-          </div>
+            <DownloadResume.Entry />
+          </Layout.List>
         </div>
       </div>
 
