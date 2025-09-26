@@ -4,7 +4,7 @@ import { EntryAnimation, EntryAnimationProps } from '@/components';
 
 export * from './EntryAnimation';
 
-type Props<P> = P &
+export type WithEntryAnimationProps<P> = P &
   Partial<Omit<EntryAnimationProps, 'className' | 'children'>> & {
     animationClassName?: string;
   };
@@ -23,7 +23,7 @@ export function withEntryAnimation<P extends object>(
     duration,
     animationClassName,
     ...rest
-  }: Props<P>) => (
+  }: WithEntryAnimationProps<P>) => (
     <EntryAnimation
       blur={blur}
       ease={ease}
