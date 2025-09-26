@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import throttle from 'lodash/throttle';
 
 const isSameRect = (a: DOMRect | null, b: DOMRect | null) => {
   if (!a || !b) return a === b;
@@ -36,14 +37,18 @@ export function useElementRect<T extends HTMLElement | SVGElement>() {
     [updateRect],
   );
 
-  const debouncedUpdate = useCallback(() => {
-    if (frame.current) cancelAnimationFrame(frame.current);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debouncedUpdate = useCallback(
+    throttle(() => {
+      if (frame.current) cancelAnimationFrame(frame.current);
 
-    frame.current = requestAnimationFrame(() => {
-      updateRect();
-      frame.current = null;
-    });
-  }, [updateRect]);
+      frame.current = requestAnimationFrame(() => {
+        updateRect();
+        frame.current = null;
+      });
+    }, 500),
+    [updateRect],
+  );
 
   useEffect(() => {
     const node = nodeRef.current;
@@ -57,12 +62,14 @@ export function useElementRect<T extends HTMLElement | SVGElement>() {
     const mutationObserver = new MutationObserver(debouncedUpdate);
     mutationObserver.observe(node, { attributes: true });
 
-    window.addEventListener('resize', debouncedUpdate);
+    window.addEventListener('resize', debouncedUpdate, { passive: true });
+    window.addEventListener('scroll', debouncedUpdate, { passive: true });
 
     return () => {
       resizeObserver.disconnect();
       mutationObserver.disconnect();
       window.removeEventListener('resize', debouncedUpdate);
+      window.removeEventListener('scroll', debouncedUpdate);
       if (frame.current) cancelAnimationFrame(frame.current);
       frame.current = null;
     };

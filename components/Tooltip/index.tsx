@@ -20,18 +20,16 @@ export const Tooltip: FC<Props> = ({
   elementRect,
   containerRect,
   place = 'top',
-}) => {
-  return (
-    <MovingAnimation
-      centered
-      place={place}
-      elementRect={elementRect}
-      containerRect={containerRect}
-      className={clsx('-translate-x-1/2', tooltipClasses)}
-    >
-      <AppearanceAnimation show={!!elementRect}>
-        <Text path={path} />
-      </AppearanceAnimation>
-    </MovingAnimation>
-  );
-};
+}) => (
+  <MovingAnimation
+    centered
+    place={place}
+    elementRect={elementRect}
+    containerRect={containerRect}
+    className={clsx('-translate-x-1/2', tooltipClasses)}
+  >
+    <AppearanceAnimation show={!!elementRect}>
+      <Text path={path} />
+    </AppearanceAnimation>
+  </MovingAnimation>
+);
