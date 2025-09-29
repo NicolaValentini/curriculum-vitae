@@ -7,18 +7,14 @@ type Props = {
   type?: 'text' | 'icon';
 };
 
-const DownloadResumeBase: FC<Props> = ({ type = 'text' }) => {
-  if (type === 'icon') {
-    return (
-      <Link
-        download
-        Icon={FaFileArrowDown}
-        href='/files/cv-valentini-nicola.pdf'
-      />
-    );
-  }
-
-  return (
+const DownloadResumeBase: FC<Props> = ({ type = 'text' }) =>
+  type === 'icon' ? (
+    <Link
+      download
+      Icon={FaFileArrowDown}
+      href='/files/cv-valentini-nicola.pdf'
+    />
+  ) : (
     <Link
       button
       download
@@ -26,7 +22,6 @@ const DownloadResumeBase: FC<Props> = ({ type = 'text' }) => {
       href='/files/cv-valentini-nicola.pdf'
     />
   );
-};
 
 export const DownloadResume = Object.assign(DownloadResumeBase, {
   Entry: withEntryAnimation<Props>(DownloadResumeBase),

@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, use } from 'react';
-import { get } from 'lodash';
+import get from 'lodash/get';
 
 import { I18nContext } from '@/context';
 
@@ -26,7 +26,7 @@ export const TextBase: FC<TextBaseProps> = ({
 }) => {
   const { dictionary } = use(I18nContext);
 
-  let className = classNameProps;
+  let className = classNameProps ?? '';
 
   if (bold) className += ' font-bold';
   if (semibold) className += ' font-semibold';

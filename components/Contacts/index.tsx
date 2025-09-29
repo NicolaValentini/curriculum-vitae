@@ -13,40 +13,38 @@ const CONTACTS: Contact[] = [
   { label: 'contacts.address', value: 'links.address' },
 ];
 
+const tdClasses = 'p-2.5 md:p-4';
+
 type Props = { className?: string };
 
-export const Contacts: FC<Props> = ({ className }) => {
-  const tdClasses = 'p-2.5 md:p-4';
-
-  return (
-    <table className={clsx('w-full', className)}>
-      <tbody>
-        {CONTACTS.map((contact, index) => (
-          <tr
-            key={contact.label}
-            className={clsx({ 'border-t border-(--primary)': index !== 0 })}
-          >
-            <td>
-              <Text.EntryParagraph
-                path={contact.label}
-                opaque
-                spaced
-                semibold
-                className={tdClasses}
-              />
-            </td>
-            <td>
-              <Text.EntryParagraph
-                path={contact.value}
-                opaque
-                spaced
-                entry='right'
-                className={clsx('text-right', tdClasses)}
-              />
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-};
+export const Contacts: FC<Props> = ({ className }) => (
+  <table className={clsx('w-full', className)}>
+    <tbody>
+      {CONTACTS.map((contact, index) => (
+        <tr
+          key={contact.label}
+          className={clsx(index !== 0 && 'border-t border-(--primary)')}
+        >
+          <td>
+            <Text.EntryParagraph
+              opaque
+              spaced
+              semibold
+              path={contact.label}
+              className={tdClasses}
+            />
+          </td>
+          <td>
+            <Text.EntryParagraph
+              opaque
+              spaced
+              entry='right'
+              path={contact.value}
+              className={clsx('text-right', tdClasses)}
+            />
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
