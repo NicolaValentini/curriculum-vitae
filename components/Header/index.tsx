@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, useEffect, useRef, useState } from 'react';
-
+import { clsx } from 'clsx';
 import { motion, useInView } from 'motion/react';
 
 import {
@@ -75,37 +75,38 @@ export const Header: FC = () => {
         initial={initialHeaderAnimate}
         animate={headerAnimate}
       >
-        <div className='h-full grid grid-cols-1 md:grid-cols-[1fr_4fr]'>
-          <div className='row-start-1 col-start-1'>
-            <div className='flex justify-end md:self-center'>
-              <Burger
-                ref={burgerRef}
-                isOpen={isOpenBurger}
-                toggleOpenAction={toggleOpenBurger}
-              />
-            </div>
-          </div>
+        <Burger
+          ref={burgerRef}
+          isOpen={isOpenBurger}
+          className='justify-self-end'
+          toggleOpenAction={toggleOpenBurger}
+        />
 
-          <AppearanceAnimation
-            show={showLinks}
-            className='row-start-1 col-start-1 md:col-start-2'
+        <AppearanceAnimation
+          show={showLinks}
+          className={clsx(
+            'h-full',
+            'flex flex-col md:grid md:grid-cols-[1fr_3fr_1fr]',
+            'justify-center items-center',
+          )}
+        >
+          <NavLinks
+            className='md:col-start-2 md:justify-self-center'
+            onClickAction={closeAfterTransitions}
+          />
+
+          <div
+            className={clsx(
+              'pt-6 md:pt-0',
+              'md:col-start-3 md:justify-self-end',
+              'flex gap-6 items-center',
+            )}
           >
-            <div className='w-full h-full md:h-auto content-center justify-items-center md:grid md:grid-cols-[3fr_1fr]'>
-              <NavLinks
-                show={showLinks}
-                onClickAction={closeAfterTransitions}
-              />
+            <LocaleSwitcher onClickAction={closeAfterTransitions} />
 
-              <div className='pt-6 md:pt-0 md:justify-self-end'>
-                <div className='flex gap-6 items-center'>
-                  <LocaleSwitcher onClickAction={closeAfterTransitions} />
-
-                  <DownloadResume type='icon' />
-                </div>
-              </div>
-            </div>
-          </AppearanceAnimation>
-        </div>
+            <DownloadResume type='icon' />
+          </div>
+        </AppearanceAnimation>
       </motion.nav>
     </header>
   );

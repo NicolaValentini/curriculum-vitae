@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, use, useEffect } from 'react';
+import { clsx } from 'clsx';
 import { usePathname } from 'next/navigation';
 
 import { I18nContext } from '@/context';
@@ -15,11 +16,11 @@ const pages = [
 ];
 
 type Props = {
-  show: boolean;
   onClickAction: () => void;
+  className?: string;
 };
 
-export const NavLinks: FC<Props> = ({ onClickAction }) => {
+export const NavLinks: FC<Props> = ({ onClickAction, className }) => {
   const path = usePathname();
   const { locale } = use(I18nContext);
 
@@ -46,7 +47,10 @@ export const NavLinks: FC<Props> = ({ onClickAction }) => {
   return (
     <ul
       ref={containerRef}
-      className='relative flex flex-col md:flex-row items-center gap-6 lg:gap-12'
+      className={clsx(
+        'relative flex flex-col md:flex-row items-center gap-6 lg:gap-12',
+        className,
+      )}
     >
       {pages.map(({ label, href }) => (
         <li key={href} ref={el => setElementRef(el, href)}>

@@ -2,11 +2,21 @@
 
 import { FC, use, useState } from 'react';
 import { clsx } from 'clsx';
-import { motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
+import { motion, Transition } from 'motion/react';
 
 import { I18nContext } from '@/context';
 import { getDictionaryClient } from '@/i18n/get-dictionary.client';
+
+const initialSelected = { x: 0, opacity: 1 };
+const animateSelected = { x: -10, opacity: 0 };
+
+const initialNotSelected = { x: 10, opacity: 0 };
+const animateNotSelected = { x: 0, opacity: 1 };
+
+const transition: Transition = { duration: 0.5, ease: 'linear' };
+const classes =
+  'row-start-1 col-start-1 font-semibold opacity-85 tracking-wide';
 
 type Props = {
   className?: string;
@@ -36,32 +46,29 @@ export const LocaleSwitcher: FC<Props> = ({ className, onClickAction }) => {
   const handleHoverStart = () => setAnimate(true);
   const handleHoverEnd = () => setAnimate(false);
 
-  const initialSelected = { x: 0, opacity: 1 };
-  const animateSelected = { x: -10, opacity: 0 };
-
-  const initialNotSelected = { x: 10, opacity: 0 };
-  const animateNotSelected = { x: 0, opacity: 1 };
-
   return (
-    <button onClick={handleLocaleChange} className={clsx('grid', className)}>
+    <button
+      onClick={handleLocaleChange}
+      className={clsx('grid cursor-pointer', className)}
+    >
       <motion.p
+        transition={transition}
         initial={initialSelected}
         animate={animate ? animateSelected : initialSelected}
         onHoverStart={handleHoverStart}
         onHoverEnd={handleHoverEnd}
-        transition={{ duration: 0.5, ease: 'linear' }}
-        className='row-start-1 col-start-1 font-semibold opacity-85 tracking-wide'
+        className={classes}
       >
         {`${locale}`.toUpperCase()}
       </motion.p>
 
       <motion.p
+        transition={transition}
         initial={initialNotSelected}
         animate={animate ? animateNotSelected : initialNotSelected}
         onHoverStart={handleHoverStart}
         onHoverEnd={handleHoverEnd}
-        transition={{ duration: 0.5, ease: 'linear' }}
-        className='row-start-1 col-start-1 font-semibold opacity-85 tracking-wide'
+        className={classes}
       >
         {`${secondLocale}`.toUpperCase()}
       </motion.p>

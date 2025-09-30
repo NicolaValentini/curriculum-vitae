@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, RefObject } from 'react';
+import { clsx } from 'clsx';
 import { motion } from 'motion/react';
 
 const burger = 'w-full h-[0.2rem] bg-(--primary) rounded';
@@ -9,10 +10,20 @@ type Props = {
   isOpen: boolean;
   toggleOpenAction: () => void;
   ref: RefObject<HTMLDivElement | null>;
+  className?: string;
 };
 
-export const Burger: FC<Props> = ({ isOpen, toggleOpenAction, ref }) => (
-  <div ref={ref} className='relative w-6 md:hidden' onClick={toggleOpenAction}>
+export const Burger: FC<Props> = ({
+  isOpen,
+  toggleOpenAction,
+  ref,
+  className,
+}) => (
+  <div
+    ref={ref}
+    className={clsx('relative w-6 md:hidden', className)}
+    onClick={toggleOpenAction}
+  >
     <motion.div
       className={`${burger} mb-[0.2rem]`}
       transition={{ duration: 0.2 }}
