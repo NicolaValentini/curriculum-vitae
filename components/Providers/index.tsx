@@ -4,6 +4,7 @@ import { FC, ReactNode, useState } from 'react';
 import { IconContext } from 'react-icons';
 
 import { Locale } from '../../i18n-config';
+
 import { I18nContext, i18nData } from '@/context';
 
 type Props = {

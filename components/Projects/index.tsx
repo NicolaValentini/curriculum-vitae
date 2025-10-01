@@ -45,6 +45,7 @@ export const Projects: FC<Props> = ({ className }) => (
             <Text.EntryTitle
               spaced
               semibold
+              secondary
               path={namePath}
               entry={!positionFlag ? 'right' : 'left'}
               className={!positionFlag ? 'text-right' : ''}

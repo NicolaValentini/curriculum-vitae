@@ -60,7 +60,7 @@ export const Skills: FC<Props> = ({ className }) => {
       ref={containerRef}
       onMouseLeave={() => !timeout && elementRef(null)}
       className={clsx(
-        'relative grid auto-rows-[minmax(16vh,min-content)] grid-cols-1 md:grid-cols-3 justify-items-center gap-3 md:gap-5',
+        'relative grid auto-rows-[minmax(16vh,min-content)] grid-cols-1 md:grid-cols-3 justify-items-center',
         className,
       )}
     >

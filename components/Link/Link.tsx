@@ -2,12 +2,12 @@
 
 import { FC, MouseEvent, use, useRef } from 'react';
 import { clsx } from 'clsx';
-import { get } from 'lodash';
+import get from 'lodash/get';
 import NextLink from 'next/link';
 import { IconType } from 'react-icons';
 
-import { Text, TextProps } from '@/components';
 import { I18nContext } from '@/context';
+import { Text, TextProps } from '@/components';
 
 type BaseProps = {
   button?: boolean;
