@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /public/
+Disallow: /i18n/
+
+# Host
+Host: https://nicola-valentini.vercel.app
+
+# Sitemaps
+Sitemap: https://nicola-valentini.vercel.app/sitemap.xml

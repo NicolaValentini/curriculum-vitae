@@ -46,20 +46,20 @@ export function middleware(request: NextRequest) {
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
 
-    // e.g. incoming request is /products
+    if (!locale) return;
+
+    // Avoid double redirects to '/'
+    if (pathname === '/') {
+      return NextResponse.redirect(new URL(`/${locale}`, request.url));
+    }
+
     // The new URL is now /en-US/products
-    return NextResponse.redirect(
-      new URL(
-        `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-        request.url,
-      ),
-    );
+    return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
   }
 
-  return undefined;
+  return;
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'],
 };
