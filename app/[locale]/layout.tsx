@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import { i18n, Locale } from '../../i18n-config';
@@ -47,6 +48,8 @@ export default async function RootLayout(props: Props) {
           <Header />
 
           {children}
+
+          <Analytics />
 
           <Footer />
         </Providers>
