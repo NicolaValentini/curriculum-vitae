@@ -30,7 +30,11 @@ const EntryImage: FC<WithEntryAnimationProps<Props>> = ({
 }) => (
   <EntryAnimation
     {...rest}
-    className={clsx(square && squareClasses, animationClassName)}
+    className={clsx(
+      'relative m-auto',
+      square && squareClasses,
+      animationClassName,
+    )}
   >
     <ImageBase alt={alt} className={className ?? ''} />
   </EntryAnimation>

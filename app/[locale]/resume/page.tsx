@@ -69,7 +69,7 @@ export default function Resume() {
           animationClassName='min-h-[16vh]'
         />
 
-        <div className='grid grid-cols-1 md:grid-cols-3 justify-items-center'>
+        <div className='grid grid-cols-1 md:grid-cols-3'>
           <Image.Entry square alt='next-template.webp' />
 
           <Image.Entry square alt='cv.webp' />

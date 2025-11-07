@@ -38,7 +38,7 @@ export const Projects: FC<Props> = ({ className }) => (
             alt={alt}
             className='2xl-rounded'
             entry={positionFlag ? 'right' : 'left'}
-            animationClassName='self-center md:self-auto'
+            animationClassName='md:self-auto'
           />
 
           <Layout.List className='flex-col md:w-1/2 justify-center'>

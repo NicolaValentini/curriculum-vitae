@@ -23,7 +23,7 @@ export default function WhoIAmPage() {
         <Text.EntryList paths={WHO_I_AM_PATHS} opaque spaced />
       </Layout.Section>
 
-      <Layout.Section className='justify-items-center'>
+      <Layout.Section>
         <Image.Entry square alt='avatar.webp' className='rounded-full' />
       </Layout.Section>
 
