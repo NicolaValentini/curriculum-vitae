@@ -2,6 +2,7 @@
 
 import { FC, useEffect, useRef, useState } from 'react';
 import { clsx } from 'clsx';
+import { useMediaQuery } from 'react-responsive';
 import { motion, useInView } from 'motion/react';
 
 import { Burger } from '../Burger';
@@ -38,31 +39,30 @@ const showHeaderAnimate = {
 };
 
 export const Header: FC = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   const sentinelRef = useRef<HTMLDivElement>(null);
   const isSentinelInView = useInView(sentinelRef);
-  const burgerRef = useRef<HTMLDivElement>(null);
-  const isBurgerInView = useInView(burgerRef);
 
   const [isOpenBurger, setIsOpenBurger] = useState<boolean>(false);
 
-  const showLinks = !!burgerRef?.current && isBurgerInView === isOpenBurger;
+  const showLinks = isMobile === isOpenBurger;
 
   const toggleOpenBurger = () => setIsOpenBurger(prev => !prev);
   const closeAfterTransitions = () =>
     setTimeout(() => setIsOpenBurger(false), 600);
 
-  let headerAnimate =
-    !sentinelRef?.current || isSentinelInView
-      ? initialHeaderAnimate
-      : scrolledHeaderAnimate;
+  let headerAnimate = isSentinelInView
+    ? initialHeaderAnimate
+    : scrolledHeaderAnimate;
 
   if (isOpenBurger) {
     headerAnimate = showHeaderAnimate;
   }
 
   useEffect(() => {
-    setIsOpenBurger(false);
-  }, [isBurgerInView]);
+    (() => setIsOpenBurger(false))();
+  }, [isMobile]);
 
   return (
     <header>
@@ -74,7 +74,6 @@ export const Header: FC = () => {
         animate={headerAnimate}
       >
         <Burger
-          ref={burgerRef}
           isOpen={isOpenBurger}
           className='justify-self-end'
           toggleOpenAction={toggleOpenBurger}

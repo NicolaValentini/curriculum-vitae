@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ReactNode, useLayoutEffect, useState } from 'react';
+import { FC, ReactNode, useMemo } from 'react';
 import { clsx } from 'clsx';
 import { motion } from 'motion/react';
 
@@ -26,42 +26,29 @@ export const MovingAnimation: FC<MovingAnimationProps> = ({
   widthAsElement = false,
   children,
 }) => {
-  const [initial, setInitial] = useState<Animate>({});
-  const [animate, setAnimate] = useState<Animate>({});
+  const initial = useMemo(
+    (): Animate =>
+      computeAnimate({
+        place,
+        centered,
+        elementRect,
+        containerRect,
+        widthAsElement,
+      }),
+    [containerRect, elementRect, widthAsElement, place, centered],
+  );
 
-  useLayoutEffect(() => {
-    if (!elementRect || !containerRect) {
-      setInitial(prev => ('left' in prev ? {} : prev));
-      setAnimate(prev => ('left' in prev ? {} : prev));
-      return;
-    }
-
-    if (!('left' in initial)) {
-      setInitial(prev =>
-        computeAnimate({
-          prev,
-          place,
-          centered,
-          elementRect,
-          containerRect,
-          widthAsElement,
-        }),
-      );
-    }
-
-    if ('left' in initial) {
-      setAnimate(prev =>
-        computeAnimate({
-          prev,
-          place,
-          centered,
-          elementRect,
-          containerRect,
-          widthAsElement,
-        }),
-      );
-    }
-  }, [containerRect, elementRect, widthAsElement, place, centered, initial]);
+  const animate = useMemo(
+    (): Animate =>
+      computeAnimate({
+        place,
+        centered,
+        elementRect,
+        containerRect,
+        widthAsElement,
+      }),
+    [containerRect, elementRect, widthAsElement, place, centered],
+  );
 
   if (!elementRect || !containerRect || !('left' in initial)) {
     return null;
@@ -82,7 +69,7 @@ export const MovingAnimation: FC<MovingAnimationProps> = ({
   );
 };
 
-type Args = { prev: Animate } & Partial<
+type Args = Partial<
   Pick<
     MovingAnimationProps,
     'place' | 'centered' | 'elementRect' | 'containerRect' | 'widthAsElement'
@@ -90,16 +77,15 @@ type Args = { prev: Animate } & Partial<
 >;
 
 const computeAnimate = ({
-  prev,
   place,
   centered,
   elementRect,
   containerRect,
   widthAsElement,
 }: Args) => {
-  const copy = { ...prev };
+  const copy: Animate = {};
 
-  copy.left = elementRect!.left - containerRect!.left;
+  copy.left = (elementRect?.left ?? 0) - (containerRect?.left ?? 0);
 
   if (centered) {
     copy.left += (elementRect?.width ?? 0) / 2;
