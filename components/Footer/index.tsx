@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { FaRegCopyright } from 'react-icons/fa6';
 
-import { FooterLinks } from '@/components';
+import { FooterLinks } from '../FooterLinks';
 
 export const Footer: FC = () => (
   <footer className='min-h-[32vh] md:min-h-[16vh] content-end'>

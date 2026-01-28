@@ -15,7 +15,9 @@ import {
 } from 'react-icons/fa6';
 
 import { useElementRect } from '@/utils';
-import { EntryAnimation, Tooltip } from '@/components';
+
+import { Tooltip } from '../Tooltip';
+import { EntryAnimation } from '../Animations';
 
 const SKILLS = [
   { path: 'skill.html', Icon: FaHtml5 },

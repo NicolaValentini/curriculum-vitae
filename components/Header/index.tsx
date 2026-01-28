@@ -4,13 +4,11 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { motion, useInView } from 'motion/react';
 
-import {
-  AppearanceAnimation,
-  Burger,
-  DownloadResume,
-  LocaleSwitcher,
-  NavLinks,
-} from '@/components';
+import { Burger } from '../Burger';
+import { NavLinks } from '../NavLinks';
+import { DownloadResume } from '../DownloadResume';
+import { LocaleSwitcher } from '../LocaleSwitcher';
+import { AppearanceAnimation } from '../Animations';
 
 const initialHeaderAnimate = {
   height: 'auto',

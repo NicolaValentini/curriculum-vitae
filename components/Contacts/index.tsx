@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { clsx } from 'clsx';
 
-import { Text, TextProps } from '@/components';
+import { Text, TextProps } from '../Text';
 
 type Contact = { label: TextProps['path']; value: TextProps['path'] };
 

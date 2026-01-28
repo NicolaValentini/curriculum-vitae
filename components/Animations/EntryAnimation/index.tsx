@@ -1,6 +1,6 @@
 import { ComponentType } from 'react';
 
-import { EntryAnimation, EntryAnimationProps } from '@/components';
+import { EntryAnimation, EntryAnimationProps } from './EntryAnimation';
 
 export * from './EntryAnimation';
 

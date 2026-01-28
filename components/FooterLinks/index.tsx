@@ -11,7 +11,9 @@ import {
 } from 'react-icons/fa6';
 
 import { useElementRect } from '@/utils';
-import { Link, Tooltip } from '@/components';
+
+import { Link } from '../Link';
+import { Tooltip } from '../Tooltip';
 
 const links = [
   {

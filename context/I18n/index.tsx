@@ -1,6 +1,6 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 
-import { Locale } from '../../i18n-config';
+import { Locale } from '@/root/i18n-config';
 
 export type i18nData = {
   locale: Locale;

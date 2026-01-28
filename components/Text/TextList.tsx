@@ -1,9 +1,12 @@
 import { FC } from 'react';
 import { clsx } from 'clsx';
 
-import { Layout, Text, TextProps } from '@/components';
+import { Layout } from '../Layout';
 
-export type TextListProps = Omit<TextProps, 'path' | 'className'> & {
+import { TextBaseProps } from './Text';
+import { TextParagraph } from './TextFonts';
+
+export type TextListProps = Omit<TextBaseProps, 'path' | 'className'> & {
   paths: string[];
   className?: string;
   textClassName?: string;
@@ -17,7 +20,7 @@ export const TextList: FC<TextListProps> = ({
 }) => (
   <Layout.List className={clsx('m-auto', className)}>
     {paths.map(path => (
-      <Text.Paragraph
+      <TextParagraph
         key={path}
         path={path}
         className={clsx('text-center', textClassName)}

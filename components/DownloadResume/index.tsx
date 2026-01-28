@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { FaFileArrowDown } from 'react-icons/fa6';
 
-import { Link, withEntryAnimation } from '@/components';
+import { Link } from '../Link';
+import { withEntryAnimation } from '../Animations';
 
 type Props = {
   type?: 'text' | 'icon';

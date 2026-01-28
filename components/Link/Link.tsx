@@ -7,7 +7,8 @@ import NextLink from 'next/link';
 import { IconType } from 'react-icons';
 
 import { I18nContext } from '@/context';
-import { Text, TextProps } from '@/components';
+
+import { Text, TextProps } from '../Text';
 
 type BaseProps = {
   button?: boolean;

@@ -1,4 +1,4 @@
-import { withEntryAnimation } from '@/components';
+import { withEntryAnimation } from '../Animations';
 
 import { TextBase, TextBaseProps } from './Text';
 import { TextList, TextListProps } from './TextList';

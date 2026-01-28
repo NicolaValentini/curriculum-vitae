@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { clsx } from 'clsx';
 import NextImage from 'next/image';
 
-import { EntryAnimation, WithEntryAnimationProps } from '@/components';
+import { EntryAnimation, WithEntryAnimationProps } from '../Animations';
 
 const squareClasses = 'w-full max-w-[32vh] h-full max-h-[32vh] aspect-square';
 

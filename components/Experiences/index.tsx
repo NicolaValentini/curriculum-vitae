@@ -1,7 +1,8 @@
 import { FC, Fragment } from 'react';
 import { clsx } from 'clsx';
 
-import { Layout, Text } from '@/components';
+import { Text } from '../Text';
+import { Layout } from '../Layout';
 
 const EXPERIENCES = [
   'nttData2024',

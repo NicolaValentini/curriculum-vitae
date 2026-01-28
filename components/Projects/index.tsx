@@ -1,7 +1,10 @@
 import { FC } from 'react';
 
-import { Image, Layout, Text } from '@/components';
 import { clsx } from 'clsx';
+
+import { Text } from '../Text';
+import { Image } from '../Image';
+import { Layout } from '../Layout';
 
 const PROJECTS = [
   {

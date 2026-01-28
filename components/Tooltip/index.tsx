@@ -1,13 +1,12 @@
 import { FC } from 'react';
 import { clsx } from 'clsx';
 
+import { Text, TextProps } from '../Text';
 import {
   AppearanceAnimation,
   MovingAnimation,
   MovingAnimationProps,
-  Text,
-  TextProps,
-} from '@/components';
+} from '../Animations';
 
 const tooltipClasses =
   'px-3 py-1.5 rounded-md bg-(--foreground) text-sm shadow-lg whitespace-nowrap z-10';

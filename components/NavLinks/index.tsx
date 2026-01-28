@@ -6,7 +6,9 @@ import { usePathname } from 'next/navigation';
 
 import { I18nContext } from '@/context';
 import { useElementRect } from '@/utils';
-import { Link, MovingAnimation } from '@/components';
+
+import { Link } from '../Link';
+import { MovingAnimation } from '../Animations';
 
 const pages = [
   { label: 'titles.home', href: '/' },

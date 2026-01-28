@@ -1,4 +1,4 @@
-import { withEntryAnimation } from '@/components';
+import { withEntryAnimation } from '../Animations';
 
 import { LinkBase, Props } from './Link';
 

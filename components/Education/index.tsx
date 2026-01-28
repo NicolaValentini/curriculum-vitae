@@ -1,7 +1,9 @@
 import { FC } from 'react';
 import { clsx } from 'clsx';
 
-import { Layout, Link, Text } from '@/components';
+import { Link } from '../Link';
+import { Text } from '../Text';
+import { Layout } from '../Layout';
 
 type Props = { className?: string };
 
