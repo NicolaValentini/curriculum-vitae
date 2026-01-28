@@ -1,6 +1,12 @@
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+if (!siteUrl) {
+  throw new Error('NEXT_PUBLIC_SITE_URL is missing');
+}
+
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: process.env.SITE_URL || 'https://localhost:3000',
+  siteUrl: siteUrl,
 
   generateRobotsTxt: true,
   generateIndexSitemap: false,
@@ -19,9 +25,7 @@ const config = {
         disallow: ['/public/', '/i18n/'],
       },
     ],
-    additionalSitemaps: [
-      `${process.env.SITE_URL || 'https://localhost:3000'}/sitemap.xml`,
-    ],
+    additionalSitemaps: [`${siteUrl}/sitemap.xml`],
   },
 };
 

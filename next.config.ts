@@ -3,6 +3,10 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
+  experimental: {
+    globalNotFound: true,
+  },
+
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [320, 640, 1080, 1920],
@@ -11,9 +15,6 @@ const nextConfig: NextConfig = {
 
   typescript: {
     ignoreBuildErrors: false,
-  },
-  eslint: {
-    ignoreDuringBuilds: false,
   },
 
   async headers() {

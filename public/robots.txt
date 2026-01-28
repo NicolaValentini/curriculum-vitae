@@ -5,7 +5,7 @@ Disallow: /public/
 Disallow: /i18n/
 
 # Host
-Host: https://nicola-valentini.vercel.app
+Host: http://localhost:3000
 
 # Sitemaps
-Sitemap: https://nicola-valentini.vercel.app/sitemap.xml
+Sitemap: http://localhost:3000/sitemap.xml
