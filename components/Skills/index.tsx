@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, MouseEvent } from 'react';
+import { FC, MouseEvent, useRef } from 'react';
 import { clsx } from 'clsx';
 import {
   FaCalendarDays,
@@ -31,11 +31,11 @@ const SKILLS = [
   { path: 'skill.team', Icon: FaPeopleGroup },
 ];
 
-let timeout: NodeJS.Timeout | null = null;
-
 type Props = { className?: string };
 
 export const Skills: FC<Props> = ({ className }) => {
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const { ref: containerRef, rect: containerRect } =
     useElementRect<HTMLDivElement>();
   const {
@@ -48,19 +48,19 @@ export const Skills: FC<Props> = ({ className }) => {
     e: MouseEvent<SVGElement, globalThis.MouseEvent>,
     key: string,
   ) => {
-    if (timeout) {
-      clearTimeout(timeout);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
 
     elementRef(e.currentTarget, key);
 
-    timeout = setTimeout(() => elementRef(null), 5000);
+    timeoutRef.current = setTimeout(() => elementRef(null), 5000);
   };
 
   return (
     <div
       ref={containerRef}
-      onMouseLeave={() => !timeout && elementRef(null)}
+      onMouseLeave={() => !timeoutRef.current && elementRef(null)}
       className={clsx(
         'relative grid auto-rows-[minmax(16vh,min-content)] grid-cols-1 md:grid-cols-3 justify-items-center',
         className,

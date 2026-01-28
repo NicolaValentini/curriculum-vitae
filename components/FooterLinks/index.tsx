@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, MouseEvent } from 'react';
+import { FC, MouseEvent, useRef } from 'react';
 import { clsx } from 'clsx';
 import {
   FaEnvelope,
@@ -40,9 +40,9 @@ const links = [
   },
 ];
 
-let timeout: NodeJS.Timeout | null = null;
-
 export const FooterLinks: FC = () => {
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const { ref: containerRef, rect: containerRect } =
     useElementRect<HTMLDivElement>();
   const {
@@ -55,13 +55,13 @@ export const FooterLinks: FC = () => {
     e: MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>,
     key: string,
   ) => {
-    if (timeout) {
-      clearTimeout(timeout);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
 
     elementRef(e.currentTarget, key);
 
-    timeout = setTimeout(() => elementRef(null), 5000);
+    timeoutRef.current = setTimeout(() => elementRef(null), 5000);
   };
 
   return (
@@ -70,7 +70,7 @@ export const FooterLinks: FC = () => {
       <div
         ref={containerRef}
         className='relative flex items-center justify-center mt-4 md:mt-0 md:ml-4'
-        onMouseLeave={() => !timeout && elementRef(null)}
+        onMouseLeave={() => !timeoutRef.current && elementRef(null)}
       >
         {links.map(({ path, Icon, href }, index) => (
           <p
