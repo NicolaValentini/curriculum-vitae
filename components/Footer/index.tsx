@@ -9,7 +9,7 @@ export const Footer: FC = () => (
       <FooterLinks />
 
       <div className='flex items-center justify-center gap-4'>
-        <FaRegCopyright /> 2025 Valentini Nicola
+        <FaRegCopyright /> 2026 Valentini Nicola
       </div>
     </div>
   </footer>

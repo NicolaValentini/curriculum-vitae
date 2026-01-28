@@ -8,7 +8,7 @@
 
 ---
 
-My personal curriculum vitae built with **Next.js 15**, starting from my own template. It includes **Tailwind CSS**, **Motion animations**, and supports **multiple languages** (Italian and English)
+My personal curriculum vitae built with **Next.js 16**, starting from my own template. It includes **Tailwind CSS**, **Motion animations**, and supports **multiple languages** (Italian and English)
 It's a modern, optimized web app to showcase my profile, experience and technical skills.
 
 🧾 **Repository**: [https://github.com/NicolaValentini/curriculum-vitae](https://github.com/NicolaValentini/curriculum-vitae)
@@ -19,13 +19,13 @@ It's a modern, optimized web app to showcase my profile, experience and technica
 ## 📄 Licenza
 
 Distributed under the MIT License.
-© 2025 — Nicola Valentini
+© 2026 — Nicola Valentini
 
 ---
 
 ## ⚙️ Stack Tecnologico
 
-- [Next.js 15](https://nextjs.org/) — framework React full-stack
+- [Next.js 16](https://nextjs.org/) — framework React full-stack
 - [TypeScript](https://www.typescriptlang.org/) — type safe
 - [TailwindCSS](https://tailwindcss.com/) — fast and responsive styling
 - [Framer Motion](https://www.framer.com/motion/) — smooth animations

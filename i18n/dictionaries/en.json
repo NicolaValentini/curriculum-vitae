@@ -129,11 +129,11 @@
   "projects": {
     "nextTemplate": {
       "name": "Next Template",
-      "description": "A lightweight starter template for Next.js 15 projects with TypeScript, featuring a pre-configured setup for ESLint, Prettier, and Husky to ensure clean and consistent code"
+      "description": "A lightweight starter template for Next.js 16 projects with TypeScript, featuring a pre-configured setup for ESLint, Prettier, and Husky to ensure clean and consistent code"
     },
     "curriculumVitae": {
       "name": "Curriculum Vitae",
-      "description": "My personal curriculum vitae built with Next.js 15, starting from my own template. It includes Tailwind CSS, Framer Motion animations, and supports multiple languages (Italian and English)"
+      "description": "My personal curriculum vitae built with Next.js 16, starting from my own template. It includes Tailwind CSS, Framer Motion animations, and supports multiple languages (Italian and English)"
     }
   },
   "contacts": {
